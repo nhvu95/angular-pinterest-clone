@@ -1,1 +1,8 @@
-<p>sb-table works!</p>
+<div
+  class="sb-pin-name"
+  [ngStyle]="{ 'max-width': maxWidth }"
+  (click)="onClick.emit($event)"
+>
+  <span class="label">{{ label }}</span>
+  <div class="material-icons-outlined"><mat-icon>expand_more</mat-icon></div>
+</div>

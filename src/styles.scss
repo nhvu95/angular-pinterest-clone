@@ -1,4 +1,238 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use "~@angular/material" as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$pinterest-clone-primary: mat.define-palette(mat.$indigo-palette);
+$pinterest-clone-accent: mat.define-palette(
+  mat.$pink-palette,
+  A200,
+  A100,
+  A400
+);
+
+// The warn palette is optional (defaults to red).
+$pinterest-clone-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$pinterest-clone-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $pinterest-clone-primary,
+      accent: $pinterest-clone-accent,
+      warn: $pinterest-clone-warn,
+    ),
+  )
+);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($pinterest-clone-theme);
+
 /* You can add global styles to this file, and also import other style files */
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+:root {
+  --g-colorRed0: #ff5247;
+  --g-colorRed100: #e60023;
+  --g-colorGray0: #fff;
+  --g-colorGray50: #fff;
+  --g-colorGray100: #efefef;
+  --g-colorGray150: #ddd;
+  --g-colorGray200: #767676;
+  --g-colorGray300: #111;
+  --g-colorGray400: #000;
+  --g-green: #0fa573;
+  --g-pine: #0a6955;
+  --g-olive: #364a4c;
+  --g-blue: #0074e8;
+  --g-navy: #004b91;
+  --g-midnight: #133a5e;
+  --g-purple: #b469eb;
+  --g-orchid: #8046a5;
+  --g-eggplant: #5b2677;
+  --g-maroon: #6e0f3c;
+  --g-watermelon: #f13535;
+  --g-orange: #e3780c;
+  --g-colorGray0Hovered: #f0f0f0;
+  --g-colorGray100Hovered: #e2e2e2;
+  --g-colorGray150Hovered: #d0d0d0;
+  --g-colorGray200Hovered: #878787;
+  --g-colorRed100Hovered: #ad081b;
+  --g-blueHovered: #4a8ad4;
+  --g-colorGray0Active: #e0e0e0;
+  --g-colorGray100Active: #dadada;
+  --g-colorGray200Active: #828282;
+  --g-colorRed100Active: #a3081a;
+  --g-blueActive: #4a85c9;
+  --g-colorTransparentDarkGray: rgba(51, 51, 51, 0.8);
+  --g-colorTransparentWhite: hsla(0, 0%, 100%, 0.8);
+  --g-colorTransparentGray60: rgba(0, 0, 0, 0.06);
+  --g-colorTransparentGray100: rgba(0, 0, 0, 0.1);
+  --g-colorTransparentGray500: rgba(0, 0, 0, 0.1);
+  --g-colorTransparentGray800: rgba(0, 0, 0, 0.8);
+
+  --g-text-font-size-1: 12px;
+  --g-text-font-size-2: 14px;
+  --g-text-font-size-3: 16px;
+
+  --g-border-width: 1px;
+  --g-border-width-lg: 2px;
+
+  --g-switch-height: 24px;
+  --g-switch-width: 40px;
+  --g-switch-border: 1px;
+
+  --g-border-sm: 6px;
+  --g-border-md: 8px;
+
+  --g-size-sm: 16px;
+  --g-size-md: 24px;
+
+  --g-heading-font-size-1: 20px;
+  --g-heading-font-size-2: 28px;
+  --g-heading-font-size-3: 36px;
+
+  --color-red-pushpin-0: #fff7f7;
+  --color-red-pushpin-50: #ffebeb;
+  --color-red-pushpin-100: #ffe0e0;
+  --color-red-pushpin-200: #fcbbbb;
+  --color-red-pushpin-300: #f47171;
+  --color-red-pushpin-400: #eb4242;
+  --color-red-pushpin-450: #e60023;
+  --color-red-pushpin-500: #c00;
+  --color-red-pushpin-600: #b60000;
+  --color-red-pushpin-700: #9b0000;
+  --color-red-pushpin-800: maroon;
+  --color-red-pushpin-900: #600;
+  --color-pink-flaminglow-0: #fff8fa;
+  --color-pink-flaminglow-50: #ffebf1;
+  --color-pink-flaminglow-100: #ffdfe9;
+  --color-pink-flaminglow-200: #ffbed2;
+  --color-pink-flaminglow-300: #fe8eb1;
+  --color-pink-flaminglow-400: #f76593;
+  --color-pink-flaminglow-450: #ee376a;
+  --color-pink-flaminglow-500: #de2c62;
+  --color-pink-flaminglow-600: #c31952;
+  --color-pink-flaminglow-700: #a30c4a;
+  --color-pink-flaminglow-800: #82053e;
+  --color-pink-flaminglow-900: #630233;
+  --color-blue-skycicle-0: #f7fbff;
+  --color-blue-skycicle-50: #e6f4ff;
+  --color-blue-skycicle-100: #d7edff;
+  --color-blue-skycicle-200: #abdbff;
+  --color-blue-skycicle-300: #75bfff;
+  --color-blue-skycicle-400: #45a3fe;
+  --color-blue-skycicle-450: #007cff;
+  --color-blue-skycicle-500: #0074e8;
+  --color-blue-skycicle-600: #005fcb;
+  --color-blue-skycicle-700: #004ba9;
+  --color-blue-skycicle-800: #003c96;
+  --color-blue-skycicle-900: #002966;
+  --color-teal-spabattical-0: #f7fdfc;
+  --color-teal-spabattical-50: #e6faf5;
+  --color-teal-spabattical-100: #ccf6ee;
+  --color-teal-spabattical-200: #75e4d5;
+  --color-teal-spabattical-300: #48d5c6;
+  --color-teal-spabattical-400: #26c0b4;
+  --color-teal-spabattical-450: #009990;
+  --color-teal-spabattical-500: #00857c;
+  --color-teal-spabattical-600: #006b6c;
+  --color-teal-spabattical-700: #005c62;
+  --color-teal-spabattical-800: #005062;
+  --color-teal-spabattical-900: #003440;
+  --color-green-matchacado-0: #f6fdf5;
+  --color-green-matchacado-50: #e3fae1;
+  --color-green-matchacado-100: #c3f9c2;
+  --color-green-matchacado-200: #a4f9ac;
+  --color-green-matchacado-300: #6bec8c;
+  --color-green-matchacado-400: #39d377;
+  --color-green-matchacado-450: #1dad65;
+  --color-green-matchacado-500: #008753;
+  --color-green-matchacado-600: #005f3e;
+  --color-green-matchacado-700: #00422c;
+  --color-green-matchacado-800: #003020;
+  --color-green-matchacado-900: #00261a;
+  --color-purple-mysticool-0: #f8f7ff;
+  --color-purple-mysticool-50: #f0edff;
+  --color-purple-mysticool-100: #e9e4ff;
+  --color-purple-mysticool-200: #d5c7ff;
+  --color-purple-mysticool-300: #b190ff;
+  --color-purple-mysticool-400: #9e68ff;
+  --color-purple-mysticool-450: #8a39fa;
+  --color-purple-mysticool-500: #812ae7;
+  --color-purple-mysticool-600: #6b16ca;
+  --color-purple-mysticool-700: #550aa9;
+  --color-purple-mysticool-800: #400387;
+  --color-purple-mysticool-900: #2c0066;
+  --color-orange-firetini-0: #fff6eb;
+  --color-orange-firetini-50: #fff0db;
+  --color-orange-firetini-100: #ffe4c1;
+  --color-orange-firetini-200: #ffc58f;
+  --color-orange-firetini-300: #fda161;
+  --color-orange-firetini-400: #f77a38;
+  --color-orange-firetini-450: #ff5b45;
+  --color-orange-firetini-500: #de3700;
+  --color-orange-firetini-600: #c32f00;
+  --color-orange-firetini-700: #a42700;
+  --color-orange-firetini-800: #842000;
+  --color-orange-firetini-900: #660e00;
+  --color-yellow-caramellow-0: #fffedb;
+  --color-yellow-caramellow-50: #fffebb;
+  --color-yellow-caramellow-100: #fffd92;
+  --color-yellow-caramellow-200: #fae600;
+  --color-yellow-caramellow-300: #fdc900;
+  --color-yellow-caramellow-400: #e18d00;
+  --color-yellow-caramellow-450: #d86800;
+  --color-yellow-caramellow-500: #bd5b00;
+  --color-yellow-caramellow-600: #aa4900;
+  --color-yellow-caramellow-700: #943a00;
+  --color-yellow-caramellow-800: #7c2d00;
+  --color-yellow-caramellow-900: #662400;
+  --color-white-mochimalist-0: #fff;
+  --color-gray-roboflow-50: #f9f9f9;
+  --color-gray-roboflow-100: #f3f1f1;
+  --color-gray-roboflow-200: #e9e9e9;
+  --color-gray-roboflow-300: #cdcdcd;
+  --color-gray-roboflow-400: #a5a5a5;
+  --color-gray-roboflow-500: #767676;
+  --color-gray-roboflow-600: #4a4a4a;
+  --color-gray-roboflow-700: #2b2b2b;
+  --color-gray-roboflow-800: #191919;
+  --color-black-cosmicore-900: #111;
+  --space-0: 0;
+  --space-100: 4px;
+  --space-200: 8px;
+  --space-300: 16px;
+  --space-400: 24px;
+  --space-500: 32px;
+  --space-600: 64px;
+  --space-negative-100: -4px;
+  --space-negative-200: -8px;
+  --space-negative-300: -16px;
+  --space-negative-400: -24px;
+  --space-negative-500: -32px;
+  --space-negative-600: -64px;
+
+  --border-blue-active: 0 0 0 4px rgb(0 132 255 / 50%);
+}

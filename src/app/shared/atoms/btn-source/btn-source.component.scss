@@ -1,0 +1,49 @@
+.btn-source {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 18px;
+  height: 32px;
+  color: var(--g-colorGray300);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: none;
+  padding: 0px 13px;
+
+  ::ng-deep .mat-button-wrapper {
+    padding: 0px;
+    display: flex;
+    align-items: center;
+
+    .mat-icon {
+      transform: rotate(135deg);
+      height: 20px !important;
+      width: 20px !important;
+      margin-right: 7px;
+    }
+    .material-icons-outlined {
+      font-size: 20px;
+      font-weight: 600;
+    }
+    .content {
+      font-size: var(--g-text-font-size-2);
+      text-align: left;
+      -webkit-line-clamp: 1;
+      font-weight: 700;
+      word-wrap: break-word;
+      -webkit-box-orient: vertical;
+      display: -webkit-box;
+      max-width: 100%;
+      overflow: hidden;
+      word-break: break-word;
+    }
+  }
+}
+
+.btn-source:hover {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.btn-source:active {
+  box-shadow: none !important;
+//   transform: scale(0.93, 0.93);
+}

@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { ButtonBase } from '../btn-base';
 
 @Component({
   selector: 'app-lb-pin-name',
   templateUrl: './lb-pin-name.component.html',
-  styleUrls: ['./lb-pin-name.component.scss']
+  styleUrls: ['./lb-pin-name.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class LbPinNameComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
+export class LbPinNameComponent extends ButtonBase {
+  @Input()
+  rowDisplay: number = 1;
+  constructor() {
+    super();
   }
-
 }

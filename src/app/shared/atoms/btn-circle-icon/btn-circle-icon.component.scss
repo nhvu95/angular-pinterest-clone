@@ -1,0 +1,123 @@
+.btn-circle-icon {
+  border-radius: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: none;
+}
+
+.btn-circle-icon--medium {
+  height: 32px;
+  max-width: 32px;
+}
+
+.btn-circle-icon--large {
+  height: 48px;
+  width: 48px;
+  max-width: 48px;
+}
+
+.btn-circle-icon--pin {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: var(--g-colorGray300);
+
+  ::ng-deep .mat-button-wrapper {
+    padding: 0px;
+    .material-icons-outlined {
+      font-size: 22px;
+      font-weight: 600;
+    }
+  }
+}
+
+.btn-circle-icon--pin:hover {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.btn-circle-icon--pin:active {
+  box-shadow: none !important;
+  transform: scale(0.93, 0.93);
+}
+
+.btn-circle-icon--pin.btn-circle-icon--large {
+  background-color: transparent;
+  .mat-icon {
+    height: 28px;
+    width: 28px;
+  }
+  .material-icons {
+    font-size: 28px;
+    font-weight: 500;
+  }
+}
+
+.btn-circle-icon--pin.btn-circle-icon--large:hover {
+  background-color: var(--g-colorGray100);
+}
+.btn-circle-icon--pin.btn-circle-icon--large:focus {
+  box-shadow: var(--border-blue-active);
+}
+.btn-circle-icon--pin.btn-circle-icon--large:active {
+  transform: unset !important;
+  background-color: var(--g-colorGray150);
+  box-shadow: var(--border-blue-active);
+}
+
+.btn-circle-icon--header {
+  background-color: transparent;
+  color: var(--g-colorGray200);
+
+  ::ng-deep .mat-button-wrapper {
+    padding: 0px;
+    .mat-icon {
+      height: 28px;
+      width: 28px;
+    }
+    .material-icons {
+      font-size: 28px;
+      font-weight: 500;
+    }
+  }
+}
+
+.btn-circle-icon--header:hover,
+.btn-circle-icon--header:focus {
+  background-color: rgba(0, 0, 0, 0.06);
+}
+.btn-circle-icon--header:focus {
+  box-shadow: var(--border-blue-active);
+}
+
+.btn-circle-icon--header:active {
+  box-shadow: none !important;
+  // transform: scale(0.93, 0.93);
+}
+
+.btn-circle-icon--pin-detail {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: var(--g-colorGray300);
+
+  ::ng-deep .mat-button-wrapper {
+    padding: 0px;
+    .mat-icon {
+      height: 20px;
+      width: 20px;
+    }
+    .material-icons {
+      font-size: 20px;
+      font-weight: 500;
+    }
+  }
+}
+.btn-circle-icon--pin-detail:active {
+  background-color: var(--g-colorGray100) !important;
+  box-shadow: none !important;
+  transform: unset !important;
+  .mat-icon {
+    transform: scale(0.95, 0.95);
+  }
+}
+
+.btn-circle-icon--toggle {
+  color: var(--g-colorGray300);
+}

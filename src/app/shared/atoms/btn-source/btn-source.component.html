@@ -1,1 +1,4 @@
-<p>btn-source works!</p>
+<button mat-flat-button class="btn-source" (click)="onClick.emit($event)">
+  <mat-icon class="material-icons-outlined">arrow_back</mat-icon>
+  <span class="content">{{ label }}</span>
+</button>

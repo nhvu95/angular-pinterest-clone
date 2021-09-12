@@ -1,15 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  Input
+} from '@angular/core';
+import { ButtonBase } from '../btn-base';
 
 @Component({
   selector: 'app-img-avatar',
   templateUrl: './img-avatar.component.html',
-  styleUrls: ['./img-avatar.component.scss']
+  styleUrls: ['./img-avatar.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ImgAvatarComponent implements OnInit {
+export class ImgAvatarComponent extends ButtonBase {
+  @Input()
+  imgSource: string = '';
 
-  constructor() { }
-
-  ngOnInit(): void {
+  public get classes(): string[] {
+    return ['img-avatar', `img-avatar--${this.size}`];
   }
 
+  constructor() {
+    super();
+  }
 }

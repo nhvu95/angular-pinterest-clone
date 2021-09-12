@@ -1,0 +1,19 @@
+.sb-pin-name {
+  display: flex;
+  .label {
+    font-style: normal;
+    font-weight: 700;
+    font-size: var(--g-text-font-size-3);
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    max-width: 100%;
+    overflow: hidden;
+    word-break: break-word;
+    word-wrap: break-word;
+    color: var(--g-colorGray0);
+    -webkit-line-clamp: 1;
+  }
+  mat-icon {
+    color: var(--g-colorGray0);
+  }
+}

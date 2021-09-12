@@ -1,1 +1,7 @@
-<p>lb-pin-name works!</p>
+<div
+  class="sb-pin-name"
+  [ngStyle]="{ 'max-width': maxWidth }"
+  (click)="onClick.emit($event)"
+>
+  <span [style]="{ '-webkit-line-clamp': rowDisplay }">{{ label }}</span>
+</div>

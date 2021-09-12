@@ -1,1 +1,6 @@
-<p>btn-circle-icon works!</p>
+<button mat-mini-fab [ngClass]="classes" (click)="onClick.emit($event)">
+  <mat-icon
+    [ngClass]="!primary ? 'material-icons-outlined' : 'material-icons'"
+    >{{ label }}</mat-icon
+  >
+</button>

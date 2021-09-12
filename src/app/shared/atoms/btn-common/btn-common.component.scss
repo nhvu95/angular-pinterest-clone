@@ -1,0 +1,49 @@
+.btn-common {
+  font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  border: 0;
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-block;
+  line-height: 1;
+  color: var(--g-colorGray0);
+}
+
+.btn-common--small {
+  font-size: 12px;
+  padding: 10px 16px;
+}
+.btn-common--medium {
+  min-height: 40px;
+  padding: 10px 14px;
+  font-size: var(--g-text-font-size-1);
+}
+.btn-common--large {
+  font-size: var(--g-text-font-size-3);
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-bottom: 12px;
+  padding-top: 12px;
+  min-height: 48px;
+  min-width: 60px;
+}
+
+.btn-common--save:hover {
+  background-color: #ad081b !important;
+  background-color: var(--g-colorRed100Hovered) !important;
+}
+
+.btn-common--save:active {
+  transform: scale(0.93,0.93);
+}
+
+.btn-common--home-detail{
+    color: var(--g-colorGray300);
+}
+
+.btn-common--home-detail:hover {
+    background-color: var(--g-colorGray100) !important;
+}
+.btn-common--home-detail:active {
+    background-color: var(--g-colorGray150) !important;
+}
