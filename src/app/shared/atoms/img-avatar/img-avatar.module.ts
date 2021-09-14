@@ -10,6 +10,7 @@ import { ImgAvatarComponent } from './img-avatar.component';
   ],
   imports: [
     CommonModule
-  ]
+  ],
+  exports: [ImgAvatarComponent]
 })
 export class ImgAvatarModule { }

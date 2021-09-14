@@ -7,6 +7,12 @@
   display: inline-block;
   line-height: 1;
   color: var(--g-colorGray0);
+  white-space: nowrap;
+}
+
+.btn-common:disabled {
+  background-color: var(--g-colorGray100) !important;
+  color: var(--g-colorGray200);
 }
 
 .btn-common--small {
@@ -46,4 +52,14 @@
 }
 .btn-common--home-detail:active {
     background-color: var(--g-colorGray150) !important;
+}
+
+.btn-common--setting {
+  background-color: var(--g-colorGray100) !important;
+  color: var(--g-colorGray300);
+  font-size: var(--g-text-font-size-3);
+}
+
+.btn-common--setting:hover {
+  background-color: var(--g-colorGray150) !important;
 }

@@ -1,0 +1,17 @@
+.header-component {
+    width: 100%;
+    display: flex;
+    flex: 1 1 100%;
+    align-items: center;
+    height: 72px;
+    padding: 4px 16px;
+    background-color: var(--g-colorGray0);
+
+    app-txb-common {
+        width: -webkit-fill-available;
+        min-width: 407px;
+        padding-left: 8px;
+        padding-right: 8px;
+        height: 48px;
+    }
+}

@@ -4,7 +4,7 @@ import { Meta, Story } from '@storybook/angular/types-6-0';
 import { SbTableComponent } from './sb-table.component';
 
 export default {
-  title: 'App/SbTable',
+  title: 'Atoms/SbTable',
   component: SbTableComponent,
   backgrounds: {
     default: 'facebook',

@@ -1,6 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header.component';
+import { BtnCircleIconModule } from '../../atoms/btn-circle-icon/btn-circle-icon.module';
+import { ImgAvatarModule } from '../../atoms/img-avatar/img-avatar.module';
+import { BtnCommonModule } from '../../atoms/btn-common/btn-common.module';
+import { TxbCommonModule } from '../../atoms/txb-common/txb-common.module';
 
 
 
@@ -9,7 +13,11 @@ import { HeaderComponent } from './header.component';
     HeaderComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ImgAvatarModule,
+    BtnCommonModule,
+    BtnCircleIconModule,
+    TxbCommonModule
   ]
 })
 export class HeaderModule { }

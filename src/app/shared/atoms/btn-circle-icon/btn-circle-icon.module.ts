@@ -7,6 +7,6 @@ import { MatIconModule } from '@angular/material/icon';
 @NgModule({
   declarations: [BtnCircleIconComponent],
   imports: [CommonModule, MatIconModule, MatButtonModule],
-  exports: [],
+  exports: [BtnCircleIconComponent],
 })
 export class BtnCircleIconModule {}

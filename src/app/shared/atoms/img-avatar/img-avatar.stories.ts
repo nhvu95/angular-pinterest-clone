@@ -4,7 +4,7 @@ import { Meta, Story } from '@storybook/angular/types-6-0';
 import { ImgAvatarComponent } from './img-avatar.component';
 
 export default {
-  title: 'App/ImgAvatar',
+  title: 'Atoms/ImgAvatar',
   component: ImgAvatarComponent,
   argTypes: {
     backgroundColor: { control: 'color' },

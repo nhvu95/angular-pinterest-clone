@@ -4,7 +4,7 @@ import { Meta, Story } from '@storybook/angular/types-6-0';
 import { LbPinNameComponent } from './lb-pin-name.component';
 
 export default {
-  title: 'App/LbPinName',
+  title: 'Atoms/LbPinName',
   component: LbPinNameComponent,
   argTypes: {
     label: { control: 'text' },

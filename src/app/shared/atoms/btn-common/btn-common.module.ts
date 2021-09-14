@@ -10,6 +10,7 @@ import { BtnCommonComponent } from './btn-common.component';
   ],
   imports: [
     CommonModule
-  ]
+  ],
+  exports: [BtnCommonComponent]
 })
 export class BtnCommonModule { }

@@ -1,0 +1,97 @@
+.txb-common:focus-within {
+    box-shadow: var(--border-blue-active);
+    #icon_search.mat-icon {
+        display: none;
+    }
+}
+
+.txb-common {
+    border-radius: 48px;
+    height: 48px;
+    width: 100%;
+    overflow: hidden;
+
+    ::ng-deep * {
+        background-color: transparent;
+    }
+    ::ng-deep .mat-form-field-wrapper {
+        padding-bottom: 0px;
+        height: 100%;
+    }
+    ::ng-deep .mat-form-field-flex {
+        padding-top: 0px;
+        padding-left: 16px;
+    }
+
+    ::ng-deep .mat-form-field-underline {
+        display: none;
+    }
+
+    ::ng-deep .mat-form-field-infix {
+        display: flex;
+        align-items: center;
+        padding: 0px;
+        border-top: none;
+        input {
+            color: var(--g-colorGray200);
+            font-size: var(--g-text-font-size-3);
+            font-weight: normal;
+            height: 44px;
+            padding-top: 4px;
+        }
+    }
+    #icon_search.mat-icon {
+        color: var(--g-colorGray200);
+        font-weight: 600;
+        width: 22px;
+        height: 22px;
+        font-size: 22px;
+        margin-right: 5px;
+    }
+    #icon_cancel.mat-icon {
+        color: var(--g-colorGray300);
+        // font-weight: 600;
+        width: 22px;
+        height: 22px;
+        font-size: 22px;
+        margin-left: 10px;
+        cursor: pointer;
+    }
+}
+
+.txb-common--primary {
+    background-color: var(--g-colorGray100);
+}
+
+.txb-common--primary:hover {
+    background-color: var(--g-colorGray150);
+}
+
+
+.txb-common--secondary {
+    background-color: var(--g-colorGray0);
+}
+
+.txb-common--input-text {
+    border: var(--g-border-width) solid var(--g-colorGray150);
+    border-color: var(--g-colorGray150);
+    appearance: none;
+    border-radius: 16px;
+    border-style: solid;
+    border-width: 2px;
+    height: 48px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    #icon_cancel,
+    #icon_search {
+        display: none !important;
+    }
+
+    ::ng-deep .mat-form-field-infix {
+        input {
+            height: 48px;
+            padding-top: 0px;
+        }
+    }
+}

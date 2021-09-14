@@ -6,7 +6,7 @@ import { Story, Meta } from '@storybook/angular/types-6-0';
 import { BtnCircleIconComponent } from './btn-circle-icon.component';
 
 export default {
-  title: 'App/BtnCircleIcon',
+  title: 'Atoms/BtnCircleIcon',
   component: BtnCircleIconComponent,
   argTypes: {
     backgroundColor: { control: 'color' },

@@ -6,7 +6,7 @@ import { Story, Meta } from '@storybook/angular/types-6-0';
 import { BtnSourceComponent } from './btn-source.component';
 
 export default {
-  title: 'App/BtnSource',
+  title: 'Atoms/BtnSource',
   component: BtnSourceComponent,
   argTypes: {
     backgroundColor: { control: 'color' },

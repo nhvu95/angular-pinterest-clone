@@ -22,6 +22,12 @@ export abstract class ButtonBase {
   @Input()
   public toggle = false;
 
+   /**
+   * Is this the principal call to action on the page?
+   */
+    @Input()
+    public disabled = false;
+
   /**
    * What background color to use
    */

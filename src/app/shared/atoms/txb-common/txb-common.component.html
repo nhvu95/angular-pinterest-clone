@@ -1,1 +1,6 @@
-<p>txb-common works!</p>
+<mat-form-field [ngClass]="classes" appearance="fill" [ngStyle]="{'max-width': maxWidth}">
+    <mat-icon class="material-icons-outlined" id="icon_search">search</mat-icon>
+    <input ngDefaultControl fieldName="field" matInput type="text" [(ngModel)]="content" (ngModelChange)="contentChange.emit($event)">
+    <mat-icon class="material-icons" id="icon_cancel" [ngStyle]="{'display': content.length > 0 ? 'unset': 'none'}" (click)="contentChange.emit('')">
+        cancel</mat-icon>
+</mat-form-field>

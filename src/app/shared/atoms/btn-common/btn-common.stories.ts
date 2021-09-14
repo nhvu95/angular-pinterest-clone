@@ -3,10 +3,11 @@ import { Story, Meta } from '@storybook/angular/types-6-0';
 import { BtnCommonComponent } from './btn-common.component';
 
 export default {
-  title: 'App/BtnCommon',
+  title: 'Atoms/BtnCommon',
   component: BtnCommonComponent,
   argTypes: {
     backgroundColor: { control: 'color' },
+    disabled: { control: 'boolean' },
   },
 } as Meta;
 
@@ -59,4 +60,12 @@ Save.args = {
   label: 'Lưu',
   mode: 'save',
   backgroundColor: 'var(--g-colorRed100)'
+}
+
+export const SettingButton = Template.bind({});
+SettingButton.args = {
+  size: 'large',
+  label: 'Thay đổi',
+  mode: 'setting',
+  backgroundColor: 'var(--g-colorGray100)'
 }
