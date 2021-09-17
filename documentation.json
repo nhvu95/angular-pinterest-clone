@@ -2,8 +2,8 @@
     "pipes": [
         {
             "name": "LinkPipe",
-            "id": "pipe-LinkPipe-5221bd86409049c264a16f7bad66e689",
-            "file": "src/app/shared/atoms/btn-source/link.pipe.ts",
+            "id": "pipe-LinkPipe-5de866183a2c7b31d061cee6d8844f8d",
+            "file": "src/app/shared/common/link.pipe.ts",
             "type": "pipe",
             "deprecated": false,
             "deprecationMessage": "",
@@ -58,7 +58,7 @@
                 }
             ],
             "ngname": "link",
-            "sourceCode": "import { Pipe, PipeTransform } from '@angular/core';\n\n@Pipe({\n  name: 'link'\n})\nexport class LinkPipe implements PipeTransform {\n\n  transform(value: string, ...args: unknown[]): string {\n    value = value.replace(/^\\S+:\\/\\//, '');\n    return value;\n  }\n\n}\n"
+            "sourceCode": "import { Pipe, PipeTransform } from '@angular/core';\n\n@Pipe({\n  name: 'link'\n})\nexport class LinkPipe implements PipeTransform {\n\n  transform(value: string, ...args: unknown[]): string {\n    value = value.replace(/^\\S+:\\/\\//, '');\n    value = value.replace(/\\/\\S+/, '');\n    return value;\n  }\n\n}\n"
         },
         {
             "name": "ReactionPipe",
@@ -2288,7 +2288,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".pin-item-detail {\r\n    display: flex;\r\n    flex-direction: column;\r\n    column-count: 2;\r\n}\r\n",
+                    "data": "mat-card {\r\n    max-width: 1016px;\r\n    width: 100%;\r\n    height: 100%;\r\n    padding: 0px;\r\n}\r\n\r\nmat-card-content {\r\n    display: flex;\r\n\r\n    figure {\r\n        width: 50%;\r\n        padding: 20px;\r\n        div {\r\n            border-radius: 16px;\r\n            overflow: hidden;\r\n        }\r\n    }\r\n    figcaption {\r\n        width: 50%;\r\n        padding-left: 32px;\r\n        padding-right: 32px;\r\n        display: flex;\r\n        flex-direction: column;\r\n        align-items: center;\r\n        .top-control-wrapper{\r\n            padding-top: 32px;\r\n            min-height: 72px;\r\n            width: 100%;\r\n\r\n            .top-control {\r\n                display: flex;\r\n                align-items: center;\r\n                width: 100%;\r\n                min-height: 60px;\r\n\r\n                app-sb-table {\r\n                    margin-left: auto;\r\n                    padding-left: 16px;\r\n                    padding-right: 16px;\r\n                }\r\n            }\r\n        }\r\n        \r\n        .source {\r\n            font-size: var(--g-text-font-size-3);\r\n            font-weight: 400;\r\n            color: var(--g-colorGray300);\r\n            text-align: left;\r\n            overflow: hidden;\r\n            text-overflow: ellipsis;\r\n            width: 100%;\r\n            cursor: pointer;\r\n            font-family: var(--g-pinFont);\r\n            text-decoration: underline;\r\n        }\r\n\r\n        .name {\r\n            text-align: left;\r\n            word-wrap: break-word;\r\n            font-weight: 700;\r\n            color: var(--g-colorGray300);\r\n            font-size: 36px;\r\n            font-size: var(--g-heading-font-size-3);\r\n            margin-bottom: 0;\r\n            margin-top: 16px;\r\n            font-family: var(--g-pinFont);\r\n            line-height: 45px;\r\n        }\r\n    }\r\n}\r\n",
                     "styleUrl": "./pin-item-detail.component.scss"
                 }
             ],
@@ -2302,11 +2302,11 @@
                 "line": 17
             },
             "extends": "ButtonBase",
-            "templateData": "<figure class=\"pin-item-detail\" *ngIf=\"pinInfo as pin\">\r\n    <div class=\"pin-image-wrapper\">\r\n        <img src=\"{{pin.imageUrl}}\" alt=\"Truly\" style=\"width:100%\">\r\n        <div class=\"overlay\">\r\n        </div>\r\n        <div class=\"control\">\r\n            <div class=\"table-and-save\">\r\n                <app-sb-table [label]=\"pin.suggestionTable\" [mode]=\"mode == 'save'?'default':'saved'\"></app-sb-table>\r\n                <app-btn-common [size]=\"'large'\" [label]=\"mode == 'save'?'Lưu':'Đã Lưu'\" [mode]=\"mode\">\r\n                </app-btn-common>\r\n            </div>\r\n            <div class=\"source-and-share\">\r\n                <app-btn-source [label]=\"pin.imageSource\"></app-btn-source>\r\n                <app-btn-circle-icon [label]=\"'file_upload'\" [mode]=\"'pin'\" [size]=\"'medium'\"></app-btn-circle-icon>\r\n                <app-btn-circle-icon [label]=\"'more_horiz'\" [mode]=\"'pin'\" [size]=\"'medium'\"></app-btn-circle-icon>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <figcaption>\r\n        <div class=\"caption\" *ngIf=\"pin.caption && pin.caption.length > 0\"\r\n            [ngStyle]=\"{'-webkit-line-clamp': author == null ? 2 : 1}\">{{pin.caption}}</div>\r\n        <div class=\"author\" *ngIf=\"author\">\r\n            <app-img-avatar [imageUrl]=\"author.avatar\"></app-img-avatar>\r\n            <div class=\"author-name\"><a target=\"_blank\" [href]=\"author.link\">{{author.name}}</a></div>\r\n        </div>\r\n        <!-- <div class=\"goodIdea\"></div> -->\r\n        <div class=\"reactions\" *ngIf=\"pin.reactions && pin.reactions.length > 0\">\r\n            <ng-container *ngFor=\"let reaction of pin.reactions\">\r\n                <div [ngClass]=\"reaction\"></div>\r\n            </ng-container>\r\n            <div class=\"num-of-react\" *ngIf=\"pin.reactionNumber\">{{pin.reactionNumber | reaction}}</div>\r\n        </div>\r\n    </figcaption>\r\n</figure>"
+            "templateData": "<mat-card>\r\n    <mat-card-content *ngIf=\"pinInfo as pin\">\r\n        <figure>\r\n            <div>\r\n                <img src=\"{{pin.imageUrl}}\" alt=\"Truly\" style=\"width:100%\">\r\n                <div class=\"overlay\"> </div>\r\n            </div>\r\n        </figure>\r\n        <figcaption>\r\n            <div class=\"top-control-wrapper\">\r\n                <div class=\"top-control\">\r\n                    <app-btn-circle-icon [label]=\"'more_horiz'\" [mode]=\"'pin'\" [size]=\"'large'\"></app-btn-circle-icon>\r\n                    <app-btn-circle-icon [label]=\"'file_upload'\" [mode]=\"'pin'\" [size]=\"'large'\"></app-btn-circle-icon>\r\n                    <app-sb-table [label]=\"pin.suggestionTable\" [mode]=\"mode == 'save'?'default':'saved'\"\r\n                        [primary]=\"true\">\r\n                    </app-sb-table>\r\n                    <app-btn-common [size]=\"'large'\" [label]=\"mode == 'save'?'Lưu':'Đã Lưu'\" [mode]=\"mode\">\r\n                    </app-btn-common>\r\n                </div>\r\n            </div>\r\n            <a class=\"source\">\r\n                {{pin.imageSource | link}}\r\n            </a>\r\n            <a class=\"name\">\r\n                <h1>\r\n                    {{pin.caption}}\r\n                </h1>\r\n            </a>\r\n        </figcaption>\r\n    </mat-card-content>\r\n</mat-card>"
         },
         {
             "name": "SbTableComponent",
-            "id": "component-SbTableComponent-e06335396ea218570d5948343d89d179",
+            "id": "component-SbTableComponent-ce95bfc43679efda7ded34fd1f9d334a",
             "file": "src/app/shared/atoms/sb-table/sb-table.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2477,11 +2477,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\r\nimport { ButtonBase } from '../btn-base';\r\n\r\n@Component({\r\n  selector: 'app-sb-table',\r\n  templateUrl: './sb-table.component.html',\r\n  styleUrls: ['./sb-table.component.scss'],\r\n})\r\nexport class SbTableComponent extends ButtonBase {\r\n  @Input()\r\n  maxWidth = '100%';\r\n\r\n  public get classes(): string[] {\r\n    return ['sb-pin-name', `sb-pin-name--${this.mode}`];\r\n  }\r\n\r\n  constructor() {\r\n    super();\r\n  }\r\n\r\n  ngOnInit(): void { }\r\n}\r\n",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\r\nimport { ButtonBase } from '../btn-base';\r\n\r\n@Component({\r\n  selector: 'app-sb-table',\r\n  templateUrl: './sb-table.component.html',\r\n  styleUrls: ['./sb-table.component.scss'],\r\n})\r\nexport class SbTableComponent extends ButtonBase {\r\n  @Input()\r\n  maxWidth = '100%';\r\n\r\n  public get classes(): string[] {\r\n    return ['sb-table-name', `sb-table-name--${this.mode}`, `sb-table-name--${this.primary}`];\r\n  }\r\n\r\n  constructor() {\r\n    super();\r\n  }\r\n\r\n  ngOnInit(): void { }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".sb-pin-name {\r\n  display: flex;\r\n  cursor: pointer;\r\n\r\n  font-family: var(--g-pinFont);\r\n\r\n  .label {\r\n    font-style: normal;\r\n    font-weight: 700;\r\n    font-size: var(--g-text-font-size-3);\r\n    -webkit-box-orient: vertical;\r\n    display: -webkit-box;\r\n    max-width: 100%;\r\n    overflow: hidden;\r\n    word-break: break-word;\r\n    word-wrap: break-word;\r\n    color: var(--g-colorGray0);\r\n    -webkit-line-clamp: 1;\r\n  }\r\n  mat-icon {\r\n    color: var(--g-colorGray0);\r\n  }\r\n}\r\n\r\n.sb-pin-name--saved {\r\n  .label {\r\n    -webkit-line-clamp: 2;\r\n    line-height: 20px;\r\n  }\r\n  .material-icons-outlined {\r\n    display: none;\r\n  }\r\n}\r\n",
+                    "data": ".sb-table-name {\r\n  display: flex;\r\n  cursor: pointer;\r\n\r\n  font-family: var(--g-pinFont);\r\n\r\n  .label {\r\n    font-style: normal;\r\n    font-weight: 700;\r\n    font-size: var(--g-text-font-size-3);\r\n    -webkit-box-orient: vertical;\r\n    display: -webkit-box;\r\n    max-width: 100%;\r\n    overflow: hidden;\r\n    word-break: break-word;\r\n    word-wrap: break-word;\r\n    color: var(--g-colorGray0);\r\n    -webkit-line-clamp: 1;\r\n  }\r\n  mat-icon {\r\n    color: var(--g-colorGray0);\r\n  }\r\n}\r\n\r\n.sb-table-name--true {\r\n  mat-icon {\r\n    color: var(--g-colorGray300);\r\n  }\r\n  .label {\r\n    color: var(--g-colorGray300);\r\n  } \r\n}\r\n\r\n.sb-table-name--saved {\r\n  .label {\r\n    -webkit-line-clamp: 2;\r\n    line-height: 20px;\r\n  }\r\n  .material-icons-outlined {\r\n    display: none;\r\n  }\r\n}\r\n",
                     "styleUrl": "./sb-table.component.scss"
                 }
             ],
@@ -2908,13 +2908,13 @@
         },
         {
             "name": "BtnSourceModule",
-            "id": "module-BtnSourceModule-ff3114a8ef4ec2072af6802cff3aa2b1",
+            "id": "module-BtnSourceModule-9868b395e7b92ec3fef53cd390a26603",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/shared/atoms/btn-source/btn-source.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { BtnSourceComponent } from './btn-source.component';\r\nimport { MatIconModule } from '@angular/material/icon';\r\nimport { MatButtonModule } from '@angular/material/button';\nimport { LinkPipe } from './link.pipe';\r\n\r\n@NgModule({\r\n  declarations: [BtnSourceComponent, LinkPipe],\r\n  imports: [CommonModule, MatIconModule, MatButtonModule],\r\n  exports: [BtnSourceComponent]\r\n})\r\nexport class BtnSourceModule { }\r\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { BtnSourceComponent } from './btn-source.component';\r\nimport { MatIconModule } from '@angular/material/icon';\r\nimport { MatButtonModule } from '@angular/material/button';\r\nimport { CommonUtilitiesModule } from '../../common/common.module';\r\n\r\n@NgModule({\r\n  declarations: [BtnSourceComponent],\r\n  imports: [CommonModule, MatIconModule, MatButtonModule, CommonUtilitiesModule],\r\n  exports: [BtnSourceComponent]\r\n})\r\nexport class BtnSourceModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -2925,15 +2925,16 @@
                     "elements": [
                         {
                             "name": "BtnSourceComponent"
-                        },
-                        {
-                            "name": "LinkPipe"
                         }
                     ]
                 },
                 {
                     "type": "imports",
-                    "elements": []
+                    "elements": [
+                        {
+                            "name": "CommonUtilitiesModule"
+                        }
+                    ]
                 },
                 {
                     "type": "exports",
@@ -2955,13 +2956,13 @@
         },
         {
             "name": "CommonUtilitiesModule",
-            "id": "module-CommonUtilitiesModule-34272886306ae47ac77e30bdba19c39c",
+            "id": "module-CommonUtilitiesModule-a4bf4fdf0c484325de66d01a8b784028",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/shared/common/common.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { ReactionPipe } from './reaction.pipe';\r\n\r\n\r\n\r\n@NgModule({\r\n    declarations: [\r\n        ReactionPipe\r\n    ],\r\n    imports: [\r\n        CommonModule],\r\n    exports: [ReactionPipe]\r\n})\r\nexport class CommonUtilitiesModule { }\r\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { ReactionPipe } from './reaction.pipe';\r\nimport { LinkPipe } from './link.pipe';\r\n\r\n\r\n\r\n@NgModule({\r\n    declarations: [\r\n        ReactionPipe,\r\n        LinkPipe\r\n    ],\r\n    imports: [\r\n        CommonModule],\r\n    exports: [ReactionPipe, LinkPipe]\r\n})\r\nexport class CommonUtilitiesModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -2970,6 +2971,9 @@
                 {
                     "type": "declarations",
                     "elements": [
+                        {
+                            "name": "LinkPipe"
+                        },
                         {
                             "name": "ReactionPipe"
                         }
@@ -2982,6 +2986,9 @@
                 {
                     "type": "exports",
                     "elements": [
+                        {
+                            "name": "LinkPipe"
+                        },
                         {
                             "name": "ReactionPipe"
                         }
@@ -3260,13 +3267,13 @@
         },
         {
             "name": "PinItemDetailModule",
-            "id": "module-PinItemDetailModule-590dd5c8374bb3851199c1523c896fd2",
+            "id": "module-PinItemDetailModule-3dd8a9eba1e41e443ed4f7fdb1361b19",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/shared/molecules/pin-item-detail/pin-item-detail.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { PinItemDetailComponent } from './pin-item-detail.component';\r\nimport { SbTableModule } from '../../atoms/sb-table/sb-table.module';\r\nimport { BtnCommonModule } from '../../atoms/btn-common/btn-common.module';\r\nimport { BtnSourceModule } from '../../atoms/btn-source/btn-source.module';\r\nimport { BtnCircleIconModule } from '../../atoms/btn-circle-icon/btn-circle-icon.module';\r\nimport { TxbCommonModule } from '../../atoms/txb-common/txb-common.module';\r\nimport { MatIconModule } from '@angular/material/icon';\r\nimport { ImgAvatarModule } from '../../atoms/img-avatar/img-avatar.module';\r\nimport { CommonUtilitiesModule } from '../../common/common.module';\r\n\r\n\r\n\r\n@NgModule({\r\n  declarations: [\r\n    PinItemDetailComponent\r\n  ],\r\n  imports: [\r\n    CommonModule,\r\n    CommonUtilitiesModule,\r\n    SbTableModule,\r\n    BtnCommonModule,\r\n    BtnSourceModule,\r\n    BtnCircleIconModule,\r\n    TxbCommonModule,\r\n    MatIconModule,\r\n    ImgAvatarModule\r\n  ]\r\n})\r\nexport class PinItemDetailModule { }\r\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { PinItemDetailComponent } from './pin-item-detail.component';\r\nimport { SbTableModule } from '../../atoms/sb-table/sb-table.module';\r\nimport { BtnCommonModule } from '../../atoms/btn-common/btn-common.module';\r\nimport { BtnSourceModule } from '../../atoms/btn-source/btn-source.module';\r\nimport { BtnCircleIconModule } from '../../atoms/btn-circle-icon/btn-circle-icon.module';\r\nimport { TxbCommonModule } from '../../atoms/txb-common/txb-common.module';\r\nimport { MatIconModule } from '@angular/material/icon';\r\nimport { ImgAvatarModule } from '../../atoms/img-avatar/img-avatar.module';\r\nimport { CommonUtilitiesModule } from '../../common/common.module';\r\nimport { MatCardModule } from '@angular/material/card';\r\n\r\n\r\n@NgModule({\r\n  declarations: [\r\n    PinItemDetailComponent\r\n  ],\r\n  imports: [\r\n    CommonModule,\r\n    CommonUtilitiesModule,\r\n    SbTableModule,\r\n    BtnCommonModule,\r\n    BtnSourceModule,\r\n    BtnCircleIconModule,\r\n    TxbCommonModule,\r\n    MatIconModule,\r\n    MatCardModule,\r\n    ImgAvatarModule\r\n  ]\r\n})\r\nexport class PinItemDetailModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -3687,7 +3694,7 @@
                 "name": "PinItemDefault",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/shared/molecules/pin-item/pin-item.stories.ts",
+                "file": "src/app/shared/molecules/pin-item-detail/pin-item-detail.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -3697,16 +3704,6 @@
                 "name": "PinItemDefault",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/shared/molecules/pin-item-detail/pin-item-detail.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "PinItemNoAuthor",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/app/shared/molecules/pin-item/pin-item.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -3724,7 +3721,7 @@
                 "defaultValue": "Template.bind({})"
             },
             {
-                "name": "PinItemNoCaption",
+                "name": "PinItemNoAuthor",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/app/shared/molecules/pin-item/pin-item.stories.ts",
@@ -3744,7 +3741,7 @@
                 "defaultValue": "Template.bind({})"
             },
             {
-                "name": "PinItemSaved",
+                "name": "PinItemNoCaption",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/app/shared/molecules/pin-item/pin-item.stories.ts",
@@ -3764,7 +3761,7 @@
                 "defaultValue": "Template.bind({})"
             },
             {
-                "name": "PinItemShortImage",
+                "name": "PinItemSaved",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/app/shared/molecules/pin-item/pin-item.stories.ts",
@@ -3784,7 +3781,7 @@
                 "defaultValue": "Template.bind({})"
             },
             {
-                "name": "PinItemShortImageDefault",
+                "name": "PinItemShortImage",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/app/shared/molecules/pin-item/pin-item.stories.ts",
@@ -3798,6 +3795,16 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/app/shared/molecules/pin-item-detail/pin-item-detail.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "PinItemShortImageDefault",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/shared/molecules/pin-item/pin-item.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -3956,11 +3963,41 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/app/shared/atoms/btn-common/btn-common.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<BtnCommonComponent>",
+                "defaultValue": "(args: BtnCommonComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/shared/atoms/img-avatar/img-avatar.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<ImgAvatarComponent>",
+                "defaultValue": "(args: ImgAvatarComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/app/shared/atoms/btn-circle-icon/btn-circle-icon.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<BtnCircleIconComponent>",
                 "defaultValue": "(\r\n  args: BtnCircleIconComponent\r\n) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/shared/atoms/sb-table/sb-table.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<SbTableComponent>",
+                "defaultValue": "(args: SbTableComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -3986,26 +4023,6 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/shared/atoms/btn-common/btn-common.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<BtnCommonComponent>",
-                "defaultValue": "(args: BtnCommonComponent) => ({\r\n  props: args,\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/shared/atoms/sb-table/sb-table.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<SbTableComponent>",
-                "defaultValue": "(args: SbTableComponent) => ({\r\n  props: args,\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/app/shared/atoms/txb-common/txb-common.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -4016,11 +4033,11 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/shared/atoms/img-avatar/img-avatar.stories.ts",
+                "file": "src/app/shared/molecules/pin-item-detail/pin-item-detail.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<ImgAvatarComponent>",
-                "defaultValue": "(args: ImgAvatarComponent) => ({\r\n  props: args,\r\n})"
+                "type": "Story<PinItemDetailComponent>",
+                "defaultValue": "(args: PinItemDetailComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -4041,16 +4058,6 @@
                 "deprecationMessage": "",
                 "type": "Story<PinItemComponent>",
                 "defaultValue": "(args: PinItemComponent) => ({\r\n  props: args,\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/shared/molecules/pin-item-detail/pin-item-detail.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<PinItemDetailComponent>",
-                "defaultValue": "(args: PinItemDetailComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "UserAvatar",
@@ -4528,78 +4535,6 @@
                     "defaultValue": "Template.bind({})"
                 }
             ],
-            "src/app/shared/molecules/pin-item/pin-item.stories.ts": [
-                {
-                    "name": "PinItemDefault",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/shared/molecules/pin-item/pin-item.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "PinItemNoAuthor",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/shared/molecules/pin-item/pin-item.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "PinItemNoCaption",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/shared/molecules/pin-item/pin-item.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "PinItemSaved",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/shared/molecules/pin-item/pin-item.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "PinItemShortImage",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/shared/molecules/pin-item/pin-item.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "PinItemShortImageDefault",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/shared/molecules/pin-item/pin-item.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/shared/molecules/pin-item/pin-item.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<PinItemComponent>",
-                    "defaultValue": "(args: PinItemComponent) => ({\r\n  props: args,\r\n})"
-                }
-            ],
             "src/app/shared/molecules/pin-item-detail/pin-item-detail.stories.ts": [
                 {
                     "name": "PinItemDefault",
@@ -4670,6 +4605,78 @@
                     "deprecationMessage": "",
                     "type": "Story<PinItemDetailComponent>",
                     "defaultValue": "(args: PinItemDetailComponent) => ({\r\n  props: args,\r\n})"
+                }
+            ],
+            "src/app/shared/molecules/pin-item/pin-item.stories.ts": [
+                {
+                    "name": "PinItemDefault",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/molecules/pin-item/pin-item.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "PinItemNoAuthor",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/molecules/pin-item/pin-item.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "PinItemNoCaption",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/molecules/pin-item/pin-item.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "PinItemSaved",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/molecules/pin-item/pin-item.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "PinItemShortImage",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/molecules/pin-item/pin-item.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "PinItemShortImageDefault",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/molecules/pin-item/pin-item.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/molecules/pin-item/pin-item.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<PinItemComponent>",
+                    "defaultValue": "(args: PinItemComponent) => ({\r\n  props: args,\r\n})"
                 }
             ],
             "src/app/shared/atoms/sb-table/sb-table.stories.ts": [
@@ -4967,15 +4974,6 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/shared/atoms/btn-source/link.pipe.ts",
-                "type": "pipe",
-                "linktype": "pipe",
-                "name": "LinkPipe",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
                 "filePath": "src/app/shared/atoms/img-avatar/img-avatar.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -5167,6 +5165,15 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/common/link.pipe.ts",
+                "type": "pipe",
+                "linktype": "pipe",
+                "name": "LinkPipe",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

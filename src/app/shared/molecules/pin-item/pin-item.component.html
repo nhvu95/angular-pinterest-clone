@@ -17,8 +17,8 @@
         </div>
     </div>
     <figcaption>
-        <div class="caption" *ngIf="pin.caption && pin.caption.length > 0"
-            [ngStyle]="{'-webkit-line-clamp': author == null ? 2 : 1}">{{pin.caption}}</div>
+        <div class="image-title" *ngIf="pin.imageTitle && pin.imageTitle.length > 0"
+            [ngStyle]="{'-webkit-line-clamp': author == null ? 2 : 1}">{{pin.imageTitle}}</div>
         <div class="author" *ngIf="author">
             <app-img-avatar [imageUrl]="author.avatar"></app-img-avatar>
             <div class="author-name"><a target="_blank" [href]="author.link">{{author.name}}</a></div>

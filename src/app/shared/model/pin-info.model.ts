@@ -1,7 +1,8 @@
 export interface PinInfo {
     imageUrl: string;
     imageSource: string;
-    caption: string;
+    imageTitle: string;
+    imageDescription?:string;
     suggestionTable: string;
     reactions?: string[];
     reactionNumber?: number;

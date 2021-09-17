@@ -46,7 +46,8 @@ PinItemDefault.args = {
   pinInfo: {
     imageUrl: 'https://i.pinimg.com/564x/cd/54/ac/cd54ac5b2893ea29919664291eff1600.jpg',
     imageSource: 'https://mobile.twitter.com/sugokukiyotteru/status/1356420216943611904/photo/1',
-    caption: 'Fan Combines Pokémon and Gundam with Custom Gunpla Creations',
+    imageTitle: 'Fan Combines Pokémon and Gundam with Custom Gunpla Creations',
+    imageDescription: 'Bungie.net is the Internet home for Bungie, the developer of Destiny, Halo, Myth, Oni, and Marathon, and the only place with official Bungie info straight from the developers.',
     suggestionTable: 'Một cái tên thật dài nhé'
   },
   author: {
@@ -62,7 +63,7 @@ PinItemSaved.args = {
   pinInfo: {
     imageUrl: 'https://i.pinimg.com/236x/25/fb/9d/25fb9d9ae58d2b45b157b2fef59b0891.jpg',
     imageSource: 'https://mobile.twitter.com/sugokukiyotteru/status/1356420216943611904/photo/1',
-    caption: 'Fan Combines Pokémon and Gundam with Custom Gunpla Creations',
+    imageTitle: 'Fan Combines Pokémon and Gundam with Custom Gunpla Creations',
     suggestionTable: 'Một cái tên thật dài nhé'
   },
   author: {
@@ -78,7 +79,7 @@ PinItemNoAuthor.args = {
   pinInfo: {
     imageUrl: 'https://i.pinimg.com/236x/25/fb/9d/25fb9d9ae58d2b45b157b2fef59b0891.jpg',
     imageSource: 'https://mobile.twitter.com/sugokukiyotteru/status/1356420216943611904/photo/1',
-    caption: 'Fan Combines Pokémon and Gundam with Custom Gunpla Creations',
+    imageTitle: 'Fan Combines Pokémon and Gundam with Custom Gunpla Creations',
     suggestionTable: 'Một cái tên thật dài nhé'
   },
   author: null,
@@ -91,7 +92,7 @@ PinItemNoCaption.args = {
   pinInfo: {
     imageUrl: 'https://i.pinimg.com/236x/25/fb/9d/25fb9d9ae58d2b45b157b2fef59b0891.jpg',
     imageSource: 'https://mobile.twitter.com/sugokukiyotteru/status/1356420216943611904/photo/1',
-    caption: '',
+    imageTitle: '',
     suggestionTable: 'Một cái tên thật dài nhé'
   },
   author: {
@@ -108,7 +109,7 @@ PinItemShortImageDefault.args = {
   pinInfo: {
     imageUrl: 'https://live.staticflickr.com/5127/5285712729_4603736266_k.jpg',
     imageSource: 'https://mobile.twitter.com/sugokukiyotteru/status/1356420216943611904/photo/1',
-    caption: '',
+    imageTitle: '',
     suggestionTable: 'Một cái tên thật dài nhé',
     reactions: []
   },
@@ -126,7 +127,7 @@ PinItemShortImage.args = {
   pinInfo: {
     imageUrl: 'https://i.pinimg.com/564x/d9/f7/bc/d9f7bc4576f818ab90447f105f8ec3a2.jpg',
     imageSource: 'https://mobile.twitter.com/sugokukiyotteru/status/1356420216943611904/photo/1',
-    caption: '',
+    imageTitle: '',
     suggestionTable: 'Một cái tên thật dài nhé',
     reactions: ['goodIdea', 'haha', 'love', 'wow'],
     reactionNumber: 520000
