@@ -1,6 +1,237 @@
 {
-    "pipes": [],
-    "interfaces": [],
+    "pipes": [
+        {
+            "name": "LinkPipe",
+            "id": "pipe-LinkPipe-5221bd86409049c264a16f7bad66e689",
+            "file": "src/app/shared/atoms/btn-source/link.pipe.ts",
+            "type": "pipe",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "description": "",
+            "rawdescription": "\n",
+            "properties": [],
+            "methods": [
+                {
+                    "name": "transform",
+                    "args": [
+                        {
+                            "name": "value",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "args",
+                            "type": "[]",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "dotDotDotToken": true
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "string",
+                    "typeParameters": [],
+                    "line": 8,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "value",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "args",
+                            "type": "[]",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "dotDotDotToken": true,
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "ngname": "link",
+            "sourceCode": "import { Pipe, PipeTransform } from '@angular/core';\n\n@Pipe({\n  name: 'link'\n})\nexport class LinkPipe implements PipeTransform {\n\n  transform(value: string, ...args: unknown[]): string {\n    value = value.replace(/^\\S+:\\/\\//, '');\n    return value;\n  }\n\n}\n"
+        },
+        {
+            "name": "ReactionPipe",
+            "id": "pipe-ReactionPipe-0e2ddc4150808c7b11d4f84beac92390",
+            "file": "src/app/shared/common/reaction.pipe.ts",
+            "type": "pipe",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "description": "",
+            "rawdescription": "\n",
+            "properties": [],
+            "methods": [
+                {
+                    "name": "transform",
+                    "args": [
+                        {
+                            "name": "value",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "args",
+                            "type": "[]",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "dotDotDotToken": true
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "string",
+                    "typeParameters": [],
+                    "line": 8,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "value",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "args",
+                            "type": "[]",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "dotDotDotToken": true,
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "ngname": "reaction",
+            "sourceCode": "import { Pipe, PipeTransform } from '@angular/core';\n\n@Pipe({\n  name: 'reaction'\n})\nexport class ReactionPipe implements PipeTransform {\n\n  transform(value: number, ...args: unknown[]): string {\n    let unit = '';\n    if (value >= 1000000) {\n      value = value / 1000000;\n      unit = 'M';\n    } else if (value >= 1000) {\n      value = value / 1000;\n      unit = 'K';\n    }\n    return value + unit;\n  }\n\n}\n"
+        }
+    ],
+    "interfaces": [
+        {
+            "name": "PinAuthor",
+            "id": "interface-PinAuthor-fbd48660f523c51e8eb2bc46bf8a695a",
+            "file": "src/app/shared/model/pin-author.model.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface PinAuthor {\r\n    avatar: string;\r\n    name: string;\r\n    link: string;\r\n}",
+            "properties": [
+                {
+                    "name": "avatar",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                },
+                {
+                    "name": "link",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                },
+                {
+                    "name": "name",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 3
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 163,
+            "methods": []
+        },
+        {
+            "name": "PinInfo",
+            "id": "interface-PinInfo-1311a1062b1fba3c2a02aee09857e01f",
+            "file": "src/app/shared/model/pin-info.model.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface PinInfo {\r\n    imageUrl: string;\r\n    imageSource: string;\r\n    caption: string;\r\n    suggestionTable: string;\r\n    reactions?: string[];\r\n    reactionNumber?: number;\r\n}",
+            "properties": [
+                {
+                    "name": "caption",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                },
+                {
+                    "name": "imageSource",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 3
+                },
+                {
+                    "name": "imageUrl",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                },
+                {
+                    "name": "reactionNumber",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": true,
+                    "description": "",
+                    "line": 7
+                },
+                {
+                    "name": "reactions",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string[]",
+                    "optional": true,
+                    "description": "",
+                    "line": 6
+                },
+                {
+                    "name": "suggestionTable",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 5
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 163,
+            "methods": []
+        }
+    ],
     "injectables": [],
     "guards": [],
     "interceptors": [],
@@ -94,8 +325,21 @@
                     "deprecationMessage": "",
                     "rawdescription": "What background color to use",
                     "description": "<p>What background color to use</p>\n",
-                    "line": 29,
+                    "line": 35,
                     "type": "string",
+                    "inheritance": {
+                        "file": "ButtonBase"
+                    }
+                },
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "Is this the principal call to action on the page?",
+                    "description": "<p>Is this the principal call to action on the page?</p>\n",
+                    "line": 29,
+                    "type": "boolean",
                     "inheritance": {
                         "file": "ButtonBase"
                     }
@@ -107,15 +351,15 @@
                     "deprecationMessage": "",
                     "jsdoctags": [
                         {
-                            "pos": 759,
-                            "end": 773,
+                            "pos": 876,
+                            "end": 890,
                             "flags": 4227072,
                             "modifierFlagsCache": 0,
                             "transformFlags": 0,
                             "kind": 317,
                             "tagName": {
-                                "pos": 760,
-                                "end": 768,
+                                "pos": 877,
+                                "end": 885,
                                 "flags": 4227072,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -127,7 +371,7 @@
                     ],
                     "rawdescription": "Button contents",
                     "description": "<p>Button contents</p>\n",
-                    "line": 43,
+                    "line": 49,
                     "type": "string",
                     "inheritance": {
                         "file": "ButtonBase"
@@ -166,7 +410,7 @@
                     "deprecationMessage": "",
                     "rawdescription": "How large should the button be?",
                     "description": "<p>How large should the button be?</p>\n",
-                    "line": 35,
+                    "line": 41,
                     "type": "\"small\" | \"medium\" | \"large\" | \"huge\"",
                     "inheritance": {
                         "file": "ButtonBase"
@@ -194,7 +438,7 @@
                     "deprecationMessage": "",
                     "rawdescription": "\n\nOptional click handler\n",
                     "description": "<p>Optional click handler</p>\n",
-                    "line": 49,
+                    "line": 55,
                     "type": "EventEmitter",
                     "inheritance": {
                         "file": "ButtonBase"
@@ -267,8 +511,21 @@
                     "deprecationMessage": "",
                     "rawdescription": "What background color to use",
                     "description": "<p>What background color to use</p>\n",
-                    "line": 29,
+                    "line": 35,
                     "type": "string",
+                    "inheritance": {
+                        "file": "ButtonBase"
+                    }
+                },
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "Is this the principal call to action on the page?",
+                    "description": "<p>Is this the principal call to action on the page?</p>\n",
+                    "line": 29,
+                    "type": "boolean",
                     "inheritance": {
                         "file": "ButtonBase"
                     }
@@ -280,15 +537,15 @@
                     "deprecationMessage": "",
                     "jsdoctags": [
                         {
-                            "pos": 759,
-                            "end": 773,
+                            "pos": 876,
+                            "end": 890,
                             "flags": 4227072,
                             "modifierFlagsCache": 0,
                             "transformFlags": 0,
                             "kind": 317,
                             "tagName": {
-                                "pos": 760,
-                                "end": 768,
+                                "pos": 877,
+                                "end": 885,
                                 "flags": 4227072,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -300,7 +557,7 @@
                     ],
                     "rawdescription": "Button contents",
                     "description": "<p>Button contents</p>\n",
-                    "line": 43,
+                    "line": 49,
                     "type": "string",
                     "inheritance": {
                         "file": "ButtonBase"
@@ -339,7 +596,7 @@
                     "deprecationMessage": "",
                     "rawdescription": "How large should the button be?",
                     "description": "<p>How large should the button be?</p>\n",
-                    "line": 35,
+                    "line": 41,
                     "type": "\"small\" | \"medium\" | \"large\" | \"huge\"",
                     "inheritance": {
                         "file": "ButtonBase"
@@ -367,7 +624,7 @@
                     "deprecationMessage": "",
                     "rawdescription": "\n\nOptional click handler\n",
                     "description": "<p>Optional click handler</p>\n",
-                    "line": 49,
+                    "line": 55,
                     "type": "EventEmitter",
                     "inheritance": {
                         "file": "ButtonBase"
@@ -387,7 +644,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".btn-common {\r\n  font-family: \"Nunito Sans\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;\r\n  font-weight: 700;\r\n  border: 0;\r\n  border-radius: 3em;\r\n  cursor: pointer;\r\n  display: inline-block;\r\n  line-height: 1;\r\n  color: var(--g-colorGray0);\r\n}\r\n\r\n.btn-common--small {\r\n  font-size: 12px;\r\n  padding: 10px 16px;\r\n}\r\n.btn-common--medium {\r\n  min-height: 40px;\r\n  padding: 10px 14px;\r\n  font-size: var(--g-text-font-size-1);\r\n}\r\n.btn-common--large {\r\n  font-size: var(--g-text-font-size-3);\r\n  padding-left: 16px;\r\n  padding-right: 16px;\r\n  padding-bottom: 12px;\r\n  padding-top: 12px;\r\n  min-height: 48px;\r\n  min-width: 60px;\r\n}\r\n\r\n.btn-common--save:hover {\r\n  background-color: #ad081b !important;\r\n  background-color: var(--g-colorRed100Hovered) !important;\r\n}\r\n\r\n.btn-common--save:active {\r\n  transform: scale(0.93,0.93);\r\n}\r\n\r\n.btn-common--home-detail{\r\n    color: var(--g-colorGray300);\r\n}\r\n\r\n.btn-common--home-detail:hover {\r\n    background-color: var(--g-colorGray100) !important;\r\n}\r\n.btn-common--home-detail:active {\r\n    background-color: var(--g-colorGray150) !important;\r\n}",
+                    "data": ".btn-common {\r\n  font-family: \"Nunito Sans\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;\r\n  font-weight: 700;\r\n  border: 0;\r\n  border-radius: 3em;\r\n  cursor: pointer;\r\n  display: inline-block;\r\n  line-height: 1;\r\n  color: var(--g-colorGray0);\r\n  white-space: nowrap;\r\n}\r\n\r\n.btn-common:disabled {\r\n  background-color: var(--g-colorGray100) !important;\r\n  color: var(--g-colorGray200);\r\n}\r\n\r\n.btn-common--small {\r\n  font-size: 12px;\r\n  padding: 10px 16px;\r\n}\r\n.btn-common--medium {\r\n  min-height: 40px;\r\n  padding: 10px 14px;\r\n  font-size: var(--g-text-font-size-1);\r\n}\r\n.btn-common--large {\r\n  font-size: var(--g-text-font-size-3);\r\n  padding-left: 16px;\r\n  padding-right: 16px;\r\n  padding-bottom: 12px;\r\n  padding-top: 12px;\r\n  min-height: 48px;\r\n  min-width: 60px;\r\n}\r\n\r\n.btn-common--save{\r\n  background-color: var(--g-colorRed100);\r\n}\r\n\r\n.btn-common--save:hover {\r\n  background-color: #ad081b !important;\r\n  background-color: var(--g-colorRed100Hovered) !important;\r\n}\r\n\r\n.btn-common--save:active {\r\n  transform: scale(0.93,0.93);\r\n}\r\n\r\n.btn-common--saved {\r\n  background-color: #111 !important;\r\n  background-color: var(--g-colorGray300) !important;\r\n}\r\n\r\n.btn-common--home{\r\n  background-color: #111 !important;\r\n  background-color: var(--g-colorGray300) !important;\r\n}\r\n\r\n.btn-common--home-detail{\r\n    color: var(--g-colorGray300);\r\n    background-color: unset;\r\n}\r\n\r\n.btn-common--home-detail:hover {\r\n    background-color: var(--g-colorGray100) !important;\r\n}\r\n.btn-common--home-detail:active {\r\n    background-color: var(--g-colorGray150) !important;\r\n}\r\n\r\n.btn-common--setting {\r\n  background-color: var(--g-colorGray100) !important;\r\n  color: var(--g-colorGray300);\r\n  font-size: var(--g-text-font-size-3);\r\n}\r\n\r\n.btn-common--setting:hover {\r\n  background-color: var(--g-colorGray150) !important;\r\n}\r\n",
                     "styleUrl": "./btn-common.component.scss"
                 }
             ],
@@ -412,7 +669,7 @@
                     }
                 }
             },
-            "templateData": "<button\r\n  type=\"button\"\r\n  (click)=\"onClick.emit($event)\"\r\n  [ngClass]=\"classes\"\r\n  [ngStyle]=\"{ 'background-color': backgroundColor }\"\r\n>\r\n  {{ label }}\r\n</button>\r\n"
+            "templateData": "<button\r\n  type=\"button\"\r\n  (click)=\"onClick.emit($event)\"\r\n  [disabled]=\"disabled\"\r\n  [ngClass]=\"classes\">\r\n  {{ label }}\r\n</button>\r\n"
         },
         {
             "name": "BtnSourceComponent",
@@ -440,8 +697,21 @@
                     "deprecationMessage": "",
                     "rawdescription": "What background color to use",
                     "description": "<p>What background color to use</p>\n",
-                    "line": 29,
+                    "line": 35,
                     "type": "string",
+                    "inheritance": {
+                        "file": "ButtonBase"
+                    }
+                },
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "Is this the principal call to action on the page?",
+                    "description": "<p>Is this the principal call to action on the page?</p>\n",
+                    "line": 29,
+                    "type": "boolean",
                     "inheritance": {
                         "file": "ButtonBase"
                     }
@@ -453,15 +723,15 @@
                     "deprecationMessage": "",
                     "jsdoctags": [
                         {
-                            "pos": 759,
-                            "end": 773,
+                            "pos": 876,
+                            "end": 890,
                             "flags": 4227072,
                             "modifierFlagsCache": 0,
                             "transformFlags": 0,
                             "kind": 317,
                             "tagName": {
-                                "pos": 760,
-                                "end": 768,
+                                "pos": 877,
+                                "end": 885,
                                 "flags": 4227072,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -473,7 +743,7 @@
                     ],
                     "rawdescription": "Button contents",
                     "description": "<p>Button contents</p>\n",
-                    "line": 43,
+                    "line": 49,
                     "type": "string",
                     "inheritance": {
                         "file": "ButtonBase"
@@ -512,7 +782,7 @@
                     "deprecationMessage": "",
                     "rawdescription": "How large should the button be?",
                     "description": "<p>How large should the button be?</p>\n",
-                    "line": 35,
+                    "line": 41,
                     "type": "\"small\" | \"medium\" | \"large\" | \"huge\"",
                     "inheritance": {
                         "file": "ButtonBase"
@@ -540,7 +810,7 @@
                     "deprecationMessage": "",
                     "rawdescription": "\n\nOptional click handler\n",
                     "description": "<p>Optional click handler</p>\n",
-                    "line": 49,
+                    "line": 55,
                     "type": "EventEmitter",
                     "inheritance": {
                         "file": "ButtonBase"
@@ -571,7 +841,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".btn-source {\r\n  background-color: rgba(255, 255, 255, 0.9);\r\n  border-radius: 18px;\r\n  height: 32px;\r\n  color: var(--g-colorGray300);\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  box-shadow: none;\r\n  padding: 0px 13px;\r\n\r\n  ::ng-deep .mat-button-wrapper {\r\n    padding: 0px;\r\n    display: flex;\r\n    align-items: center;\r\n\r\n    .mat-icon {\r\n      transform: rotate(135deg);\r\n      height: 20px !important;\r\n      width: 20px !important;\r\n      margin-right: 7px;\r\n    }\r\n    .material-icons-outlined {\r\n      font-size: 20px;\r\n      font-weight: 600;\r\n    }\r\n    .content {\r\n      font-size: var(--g-text-font-size-2);\r\n      text-align: left;\r\n      -webkit-line-clamp: 1;\r\n      font-weight: 700;\r\n      word-wrap: break-word;\r\n      -webkit-box-orient: vertical;\r\n      display: -webkit-box;\r\n      max-width: 100%;\r\n      overflow: hidden;\r\n      word-break: break-word;\r\n    }\r\n  }\r\n}\r\n\r\n.btn-source:hover {\r\n  background-color: rgba(255, 255, 255, 1);\r\n}\r\n\r\n.btn-source:active {\r\n  box-shadow: none !important;\r\n//   transform: scale(0.93, 0.93);\r\n}\r\n",
+                    "data": ".btn-source {\r\n  background-color: rgba(255, 255, 255, 0.9);\r\n  border-radius: 18px;\r\n  height: 32px;\r\n  color: var(--g-colorGray300);\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: flex-start;\r\n  box-shadow: none;\r\n  padding: 0px 7px;\r\n  width: 100%;\r\n\r\n  ::ng-deep .mat-button-wrapper {\r\n    padding: 0px;\r\n    display: flex;\r\n    align-items: center;\r\n    width: 100%;\r\n    height: 32px;\r\n\r\n    .mat-icon {\r\n      transform: rotate(135deg);\r\n      height: 20px !important;\r\n      width: 20px !important;\r\n      margin-right: 3px;\r\n    }\r\n    .material-icons-outlined {\r\n      font-size: 20px;\r\n      font-weight: 600;\r\n    }\r\n    .content {\r\n      font-size: var(--g-text-font-size-2);\r\n      text-align: left;\r\n      font-weight: 700;\r\n      white-space: nowrap;\r\n      text-overflow: ellipsis;\r\n      display: block;\r\n      max-width: 100%;\r\n      overflow: hidden;\r\n    }\r\n  }\r\n}\r\n\r\n.btn-source:hover {\r\n  background-color: rgba(255, 255, 255, 1);\r\n}\r\n\r\n.btn-source:active {\r\n  box-shadow: none !important;\r\n  //   transform: scale(0.93, 0.93);\r\n}\r\n",
                     "styleUrl": "./btn-source.component.scss"
                 }
             ],
@@ -585,11 +855,11 @@
                 "line": 10
             },
             "extends": "ButtonBase",
-            "templateData": "<button mat-flat-button class=\"btn-source\" (click)=\"onClick.emit($event)\">\r\n  <mat-icon class=\"material-icons-outlined\">arrow_back</mat-icon>\r\n  <span class=\"content\">{{ label }}</span>\r\n</button>\r\n"
+            "templateData": "<div style=\"display: block; width: 100%;\">\r\n  <button mat-flat-button class=\"btn-source\" (click)=\"onClick.emit($event)\">\r\n    <mat-icon class=\"material-icons-outlined\">arrow_back</mat-icon>\r\n    <span class=\"content\">{{ label | link}}</span>\r\n  </button>\r\n</div>"
         },
         {
             "name": "ButtonBase",
-            "id": "component-ButtonBase-6f7b98c15fc3f8e3f7d6bf80554655e1",
+            "id": "component-ButtonBase-2e6fe206198303d2270bcb625b8118cc",
             "file": "src/app/shared/atoms/btn-base.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -608,8 +878,18 @@
                     "deprecationMessage": "",
                     "rawdescription": "What background color to use",
                     "description": "<p>What background color to use</p>\n",
-                    "line": 29,
+                    "line": 35,
                     "type": "string"
+                },
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "Is this the principal call to action on the page?",
+                    "description": "<p>Is this the principal call to action on the page?</p>\n",
+                    "line": 29,
+                    "type": "boolean"
                 },
                 {
                     "name": "label",
@@ -618,15 +898,15 @@
                     "deprecationMessage": "",
                     "jsdoctags": [
                         {
-                            "pos": 759,
-                            "end": 773,
+                            "pos": 876,
+                            "end": 890,
                             "flags": 4227072,
                             "modifierFlagsCache": 0,
                             "transformFlags": 0,
                             "kind": 317,
                             "tagName": {
-                                "pos": 760,
-                                "end": 768,
+                                "pos": 877,
+                                "end": 885,
                                 "flags": 4227072,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -638,7 +918,7 @@
                     ],
                     "rawdescription": "Button contents",
                     "description": "<p>Button contents</p>\n",
-                    "line": 43,
+                    "line": 49,
                     "type": "string"
                 },
                 {
@@ -668,7 +948,7 @@
                     "deprecationMessage": "",
                     "rawdescription": "How large should the button be?",
                     "description": "<p>How large should the button be?</p>\n",
-                    "line": 35,
+                    "line": 41,
                     "type": "\"small\" | \"medium\" | \"large\" | \"huge\""
                 },
                 {
@@ -690,7 +970,7 @@
                     "deprecationMessage": "",
                     "rawdescription": "\n\nOptional click handler\n",
                     "description": "<p>Optional click handler</p>\n",
-                    "line": 49,
+                    "line": 55,
                     "type": "EventEmitter"
                 }
             ],
@@ -703,7 +983,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, Output } from '@angular/core';\r\n\r\n@Component({\r\n  template: '',\r\n})\r\nexport abstract class ButtonBase {\r\n  /**\r\n   * Is this the principal call to action on the page?\r\n   */\r\n  @Input()\r\n  public primary = false;\r\n\r\n  /**\r\n   * Is this the principal call to action on the page?\r\n   */\r\n  @Input()\r\n  public mode?: string = 'default';\r\n\r\n  /**\r\n   * Is this the principal call to action on the page?\r\n   */\r\n  @Input()\r\n  public toggle = false;\r\n\r\n  /**\r\n   * What background color to use\r\n   */\r\n  @Input()\r\n  public backgroundColor?: string;\r\n\r\n  /**\r\n   * How large should the button be?\r\n   */\r\n  @Input()\r\n  public size: 'small' | 'medium' | 'large' | 'huge' = 'medium';\r\n\r\n  /**\r\n   * Button contents\r\n   *\r\n   * @required\r\n   */\r\n  @Input()\r\n  public label = 'Button';\r\n\r\n  /**\r\n   * Optional click handler\r\n   */\r\n  @Output()\r\n  public onClick = new EventEmitter<Event>();\r\n}\r\n",
+            "sourceCode": "import { Component, EventEmitter, Input, Output } from '@angular/core';\r\n\r\n@Component({\r\n  template: '',\r\n})\r\nexport abstract class ButtonBase {\r\n  /**\r\n   * Is this the principal call to action on the page?\r\n   */\r\n  @Input()\r\n  public primary = false;\r\n\r\n  /**\r\n   * Is this the principal call to action on the page?\r\n   */\r\n  @Input()\r\n  public mode?: string = 'default';\r\n\r\n  /**\r\n   * Is this the principal call to action on the page?\r\n   */\r\n  @Input()\r\n  public toggle = false;\r\n\r\n   /**\r\n   * Is this the principal call to action on the page?\r\n   */\r\n    @Input()\r\n    public disabled = false;\r\n\r\n  /**\r\n   * What background color to use\r\n   */\r\n  @Input()\r\n  public backgroundColor?: string;\r\n\r\n  /**\r\n   * How large should the button be?\r\n   */\r\n  @Input()\r\n  public size: 'small' | 'medium' | 'large' | 'huge' = 'medium';\r\n\r\n  /**\r\n   * Button contents\r\n   *\r\n   * @required\r\n   */\r\n  @Input()\r\n  public label = 'Button';\r\n\r\n  /**\r\n   * Optional click handler\r\n   */\r\n  @Output()\r\n  public onClick = new EventEmitter<Event>();\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": ""
@@ -1088,7 +1368,7 @@
         },
         {
             "name": "HeaderComponent",
-            "id": "component-HeaderComponent-8ad57df5997ae5255f29359d2a5f5604-1",
+            "id": "component-HeaderComponent-a24803e5779ee88dee6fec7f953c9493-1",
             "file": "src/app/shared/molecules/header/header.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1106,7 +1386,28 @@
             "viewProviders": [],
             "inputsClass": [],
             "outputsClass": [],
-            "propertiesClass": [],
+            "propertiesClass": [
+                {
+                    "name": "searchContent",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 9
+                },
+                {
+                    "name": "user",
+                    "defaultValue": "{ avatar: 'https://i.pinimg.com/75x75_RS/73/03/c6/7303c6ea1ff1a2be0e40de7607eb8286.jpg' }",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "optional": false,
+                    "description": "",
+                    "line": 10
+                }
+            ],
             "methodsClass": [
                 {
                     "name": "ngOnInit",
@@ -1114,7 +1415,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 12,
+                    "line": 13,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -1126,11 +1427,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-header',\r\n  templateUrl: './header.component.html',\r\n  styleUrls: ['./header.component.scss']\r\n})\r\nexport class HeaderComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-header',\r\n  templateUrl: './header.component.html',\r\n  styleUrls: ['./header.component.scss']\r\n})\r\nexport class HeaderComponent implements OnInit {\r\n  searchContent: string = '';\r\n  user = { avatar: 'https://i.pinimg.com/75x75_RS/73/03/c6/7303c6ea1ff1a2be0e40de7607eb8286.jpg' };\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n\r\n  }\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "",
+                    "data": ".header-component {\r\n    width: 100%;\r\n    display: flex;\r\n    flex: 1 1 100%;\r\n    align-items: center;\r\n    height: 72px;\r\n    padding: 4px 16px;\r\n    background-color: var(--g-colorGray0);\r\n\r\n    app-txb-common {\r\n        width: -webkit-fill-available;\r\n        min-width: 407px;\r\n        padding-left: 8px;\r\n        padding-right: 8px;\r\n        height: 48px;\r\n    }\r\n}\r\n",
                     "styleUrl": "./header.component.scss"
                 }
             ],
@@ -1141,7 +1442,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [],
-                "line": 8
+                "line": 10
             },
             "implements": [
                 "OnInit"
@@ -1149,11 +1450,11 @@
             "isDuplicate": true,
             "duplicateId": 1,
             "duplicateName": "HeaderComponent-1",
-            "templateData": "<p>header works!</p>\r\n"
+            "templateData": "<nav class=\"header-component\">\r\n    <app-img-avatar [size]=\"'small'\" [primary]=\"true\"></app-img-avatar>\r\n    <app-btn-common [size]=\"'large'\" [label]=\"'Trang chủ'\" [mode]=\"'home'\">\r\n    </app-btn-common>\r\n    <app-txb-common [(content)]=\"searchContent\" [maxWidth]=\"'100%'\" [primary]=\"true\"></app-txb-common>\r\n    <app-btn-circle-icon [label]=\"'notifications'\" [primary]=\"true\" [mode]=\"'header'\" [size]=\"'large'\">\r\n    </app-btn-circle-icon>\r\n    <app-btn-circle-icon [label]=\"'sms'\" [primary]=\"true\" [mode]=\"'header'\" [size]=\"'large'\"></app-btn-circle-icon>\r\n    <app-img-avatar [size]=\"'small'\" [imageUrl]=\"user.avatar\"></app-img-avatar>\r\n</nav>"
         },
         {
             "name": "ImgAvatarComponent",
-            "id": "component-ImgAvatarComponent-febdef21f8734516086eb598bd9d4711",
+            "id": "component-ImgAvatarComponent-d348342541d944045d574c03a576ee99",
             "file": "src/app/shared/atoms/img-avatar/img-avatar.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
@@ -1172,7 +1473,7 @@
             "viewProviders": [],
             "inputsClass": [
                 {
-                    "name": "imgSource",
+                    "name": "imageUrl",
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
@@ -1185,8 +1486,21 @@
                     "deprecationMessage": "",
                     "rawdescription": "What background color to use",
                     "description": "<p>What background color to use</p>\n",
-                    "line": 29,
+                    "line": 35,
                     "type": "string",
+                    "inheritance": {
+                        "file": "ButtonBase"
+                    }
+                },
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "Is this the principal call to action on the page?",
+                    "description": "<p>Is this the principal call to action on the page?</p>\n",
+                    "line": 29,
+                    "type": "boolean",
                     "inheritance": {
                         "file": "ButtonBase"
                     }
@@ -1198,15 +1512,15 @@
                     "deprecationMessage": "",
                     "jsdoctags": [
                         {
-                            "pos": 759,
-                            "end": 773,
+                            "pos": 876,
+                            "end": 890,
                             "flags": 4227072,
                             "modifierFlagsCache": 0,
                             "transformFlags": 0,
                             "kind": 317,
                             "tagName": {
-                                "pos": 760,
-                                "end": 768,
+                                "pos": 877,
+                                "end": 885,
                                 "flags": 4227072,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -1218,7 +1532,7 @@
                     ],
                     "rawdescription": "Button contents",
                     "description": "<p>Button contents</p>\n",
-                    "line": 43,
+                    "line": 49,
                     "type": "string",
                     "inheritance": {
                         "file": "ButtonBase"
@@ -1257,7 +1571,7 @@
                     "deprecationMessage": "",
                     "rawdescription": "How large should the button be?",
                     "description": "<p>How large should the button be?</p>\n",
-                    "line": 35,
+                    "line": 41,
                     "type": "\"small\" | \"medium\" | \"large\" | \"huge\"",
                     "inheritance": {
                         "file": "ButtonBase"
@@ -1285,7 +1599,7 @@
                     "deprecationMessage": "",
                     "rawdescription": "\n\nOptional click handler\n",
                     "description": "<p>Optional click handler</p>\n",
-                    "line": 49,
+                    "line": 55,
                     "type": "EventEmitter",
                     "inheritance": {
                         "file": "ButtonBase"
@@ -1301,7 +1615,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import {\r\n  ChangeDetectionStrategy,\r\n  Component,\r\n  Input\r\n} from '@angular/core';\r\nimport { ButtonBase } from '../btn-base';\r\n\r\n@Component({\r\n  selector: 'app-img-avatar',\r\n  templateUrl: './img-avatar.component.html',\r\n  styleUrls: ['./img-avatar.component.scss'],\r\n  changeDetection: ChangeDetectionStrategy.OnPush,\r\n})\r\nexport class ImgAvatarComponent extends ButtonBase {\r\n  @Input()\r\n  imgSource: string = '';\r\n\r\n  public get classes(): string[] {\r\n    return ['img-avatar', `img-avatar--${this.size}`];\r\n  }\r\n\r\n  constructor() {\r\n    super();\r\n  }\r\n}\r\n",
+            "sourceCode": "import {\r\n  ChangeDetectionStrategy,\r\n  Component,\r\n  Input\r\n} from '@angular/core';\r\nimport { ButtonBase } from '../btn-base';\r\n\r\n@Component({\r\n  selector: 'app-img-avatar',\r\n  templateUrl: './img-avatar.component.html',\r\n  styleUrls: ['./img-avatar.component.scss'],\r\n  changeDetection: ChangeDetectionStrategy.OnPush,\r\n})\r\nexport class ImgAvatarComponent extends ButtonBase {\r\n  @Input()\r\n  imageUrl: string = '';\r\n\r\n  public get classes(): string[] {\r\n    return ['img-avatar', `img-avatar--${this.size}`];\r\n  }\r\n\r\n  constructor() {\r\n    super();\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1330,7 +1644,7 @@
                     }
                 }
             },
-            "templateData": "<a [ngClass]=\"classes\" (click)=\"onClick.emit($event)\">\r\n  <svg\r\n    *ngIf=\"primary; else image\"\r\n    class=\"gUZ lZJ U9O kVc\"\r\n    height=\"24\"\r\n    width=\"24\"\r\n    viewBox=\"0 0 24 24\"\r\n    aria-hidden=\"true\"\r\n    aria-label=\"\"\r\n    role=\"img\"\r\n  >\r\n    <path\r\n      d=\"M0 12c0 5.123 3.211 9.497 7.73 11.218-.11-.937-.227-2.482.025-3.566.217-.932 1.401-5.938 1.401-5.938s-.357-.715-.357-1.774c0-1.66.962-2.9 2.161-2.9 1.02 0 1.512.765 1.512 1.682 0 1.025-.653 2.557-.99 3.978-.281 1.189.597 2.159 1.769 2.159 2.123 0 3.756-2.239 3.756-5.471 0-2.861-2.056-4.86-4.991-4.86-3.398 0-5.393 2.549-5.393 5.184 0 1.027.395 2.127.889 2.726a.36.36 0 0 1 .083.343c-.091.378-.293 1.189-.332 1.355-.053.218-.173.265-.4.159-1.492-.694-2.424-2.875-2.424-4.627 0-3.769 2.737-7.229 7.892-7.229 4.144 0 7.365 2.953 7.365 6.899 0 4.117-2.595 7.431-6.199 7.431-1.211 0-2.348-.63-2.738-1.373 0 0-.599 2.282-.744 2.84-.282 1.084-1.064 2.456-1.549 3.235C9.584 23.815 10.77 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0 0 5.373 0 12\"\r\n    ></path>\r\n  </svg>\r\n  <ng-template #image>\r\n    <img src=\"{{ imgSource }}\" />\r\n  </ng-template>\r\n</a>\r\n"
+            "templateData": "<a [ngClass]=\"classes\" (click)=\"onClick.emit($event)\">\r\n  <svg\r\n    *ngIf=\"primary; else image\"\r\n    class=\"gUZ lZJ U9O kVc\"\r\n    height=\"24\"\r\n    width=\"24\"\r\n    viewBox=\"0 0 24 24\"\r\n    aria-hidden=\"true\"\r\n    aria-label=\"\"\r\n    role=\"img\"\r\n  >\r\n    <path\r\n      d=\"M0 12c0 5.123 3.211 9.497 7.73 11.218-.11-.937-.227-2.482.025-3.566.217-.932 1.401-5.938 1.401-5.938s-.357-.715-.357-1.774c0-1.66.962-2.9 2.161-2.9 1.02 0 1.512.765 1.512 1.682 0 1.025-.653 2.557-.99 3.978-.281 1.189.597 2.159 1.769 2.159 2.123 0 3.756-2.239 3.756-5.471 0-2.861-2.056-4.86-4.991-4.86-3.398 0-5.393 2.549-5.393 5.184 0 1.027.395 2.127.889 2.726a.36.36 0 0 1 .083.343c-.091.378-.293 1.189-.332 1.355-.053.218-.173.265-.4.159-1.492-.694-2.424-2.875-2.424-4.627 0-3.769 2.737-7.229 7.892-7.229 4.144 0 7.365 2.953 7.365 6.899 0 4.117-2.595 7.431-6.199 7.431-1.211 0-2.348-.63-2.738-1.373 0 0-.599 2.282-.744 2.84-.282 1.084-1.064 2.456-1.549 3.235C9.584 23.815 10.77 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0 0 5.373 0 12\"\r\n    ></path>\r\n  </svg>\r\n  <ng-template #image>\r\n    <img src=\"{{ imageUrl }}\" />\r\n  </ng-template>\r\n</a>\r\n"
         },
         {
             "name": "LbPinNameComponent",
@@ -1366,8 +1680,21 @@
                     "deprecationMessage": "",
                     "rawdescription": "What background color to use",
                     "description": "<p>What background color to use</p>\n",
-                    "line": 29,
+                    "line": 35,
                     "type": "string",
+                    "inheritance": {
+                        "file": "ButtonBase"
+                    }
+                },
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "Is this the principal call to action on the page?",
+                    "description": "<p>Is this the principal call to action on the page?</p>\n",
+                    "line": 29,
+                    "type": "boolean",
                     "inheritance": {
                         "file": "ButtonBase"
                     }
@@ -1379,15 +1706,15 @@
                     "deprecationMessage": "",
                     "jsdoctags": [
                         {
-                            "pos": 759,
-                            "end": 773,
+                            "pos": 876,
+                            "end": 890,
                             "flags": 4227072,
                             "modifierFlagsCache": 0,
                             "transformFlags": 0,
                             "kind": 317,
                             "tagName": {
-                                "pos": 760,
-                                "end": 768,
+                                "pos": 877,
+                                "end": 885,
                                 "flags": 4227072,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -1399,7 +1726,7 @@
                     ],
                     "rawdescription": "Button contents",
                     "description": "<p>Button contents</p>\n",
-                    "line": 43,
+                    "line": 49,
                     "type": "string",
                     "inheritance": {
                         "file": "ButtonBase"
@@ -1438,7 +1765,7 @@
                     "deprecationMessage": "",
                     "rawdescription": "How large should the button be?",
                     "description": "<p>How large should the button be?</p>\n",
-                    "line": 35,
+                    "line": 41,
                     "type": "\"small\" | \"medium\" | \"large\" | \"huge\"",
                     "inheritance": {
                         "file": "ButtonBase"
@@ -1466,7 +1793,7 @@
                     "deprecationMessage": "",
                     "rawdescription": "\n\nOptional click handler\n",
                     "description": "<p>Optional click handler</p>\n",
-                    "line": 49,
+                    "line": 55,
                     "type": "EventEmitter",
                     "inheritance": {
                         "file": "ButtonBase"
@@ -1576,8 +1903,9 @@
         },
         {
             "name": "PinItemComponent",
-            "id": "component-PinItemComponent-0c9491bf80031dcbca50ca9851d978be",
+            "id": "component-PinItemComponent-4e95aee6d58d121135818b6d5716dd41",
             "file": "src/app/shared/molecules/pin-item/pin-item.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -1592,138 +1920,22 @@
                 "./pin-item.component.html"
             ],
             "viewProviders": [],
-            "inputsClass": [],
-            "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 12,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                }
-            ],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-pin-item',\r\n  templateUrl: './pin-item.component.html',\r\n  styleUrls: ['./pin-item.component.scss']\r\n})\r\nexport class PinItemComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
-            "assetsDirs": [],
-            "styleUrlsData": [
-                {
-                    "data": "",
-                    "styleUrl": "./pin-item.component.scss"
-                }
-            ],
-            "stylesData": "",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "args": [],
-                "line": 8
-            },
-            "implements": [
-                "OnInit"
-            ],
-            "templateData": "<p>pin-item works!</p>\r\n"
-        },
-        {
-            "name": "PinItemDetailComponent",
-            "id": "component-PinItemDetailComponent-71c6a0725d68dca2d98d09672d4ef305",
-            "file": "src/app/shared/molecules/pin-item-detail/pin-item-detail.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "app-pin-item-detail",
-            "styleUrls": [
-                "./pin-item-detail.component.scss"
-            ],
-            "styles": [],
-            "templateUrl": [
-                "./pin-item-detail.component.html"
-            ],
-            "viewProviders": [],
-            "inputsClass": [],
-            "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 12,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                }
-            ],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-pin-item-detail',\r\n  templateUrl: './pin-item-detail.component.html',\r\n  styleUrls: ['./pin-item-detail.component.scss']\r\n})\r\nexport class PinItemDetailComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
-            "assetsDirs": [],
-            "styleUrlsData": [
-                {
-                    "data": "",
-                    "styleUrl": "./pin-item-detail.component.scss"
-                }
-            ],
-            "stylesData": "",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "args": [],
-                "line": 8
-            },
-            "implements": [
-                "OnInit"
-            ],
-            "templateData": "<p>pin-item-detail works!</p>\r\n"
-        },
-        {
-            "name": "SbTableComponent",
-            "id": "component-SbTableComponent-e6e6afd8f80aaa56900def5b67b7204b",
-            "file": "src/app/shared/atoms/sb-table/sb-table.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "app-sb-table",
-            "styleUrls": [
-                "./sb-table.component.scss"
-            ],
-            "styles": [],
-            "templateUrl": [
-                "./sb-table.component.html"
-            ],
-            "viewProviders": [],
             "inputsClass": [
                 {
-                    "name": "maxWidth",
-                    "defaultValue": "'100%'",
+                    "name": "author",
+                    "defaultValue": "null",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 11,
-                    "type": "string"
+                    "line": 19,
+                    "type": "PinAuthor | null"
+                },
+                {
+                    "name": "pinInfo",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "PinInfo | null"
                 },
                 {
                     "name": "backgroundColor",
@@ -1731,8 +1943,21 @@
                     "deprecationMessage": "",
                     "rawdescription": "What background color to use",
                     "description": "<p>What background color to use</p>\n",
-                    "line": 29,
+                    "line": 35,
                     "type": "string",
+                    "inheritance": {
+                        "file": "ButtonBase"
+                    }
+                },
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "Is this the principal call to action on the page?",
+                    "description": "<p>Is this the principal call to action on the page?</p>\n",
+                    "line": 29,
+                    "type": "boolean",
                     "inheritance": {
                         "file": "ButtonBase"
                     }
@@ -1744,15 +1969,15 @@
                     "deprecationMessage": "",
                     "jsdoctags": [
                         {
-                            "pos": 759,
-                            "end": 773,
+                            "pos": 876,
+                            "end": 890,
                             "flags": 4227072,
                             "modifierFlagsCache": 0,
                             "transformFlags": 0,
                             "kind": 317,
                             "tagName": {
-                                "pos": 760,
-                                "end": 768,
+                                "pos": 877,
+                                "end": 885,
                                 "flags": 4227072,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -1764,7 +1989,7 @@
                     ],
                     "rawdescription": "Button contents",
                     "description": "<p>Button contents</p>\n",
-                    "line": 43,
+                    "line": 49,
                     "type": "string",
                     "inheritance": {
                         "file": "ButtonBase"
@@ -1803,7 +2028,7 @@
                     "deprecationMessage": "",
                     "rawdescription": "How large should the button be?",
                     "description": "<p>How large should the button be?</p>\n",
-                    "line": 35,
+                    "line": 41,
                     "type": "\"small\" | \"medium\" | \"large\" | \"huge\"",
                     "inheritance": {
                         "file": "ButtonBase"
@@ -1831,7 +2056,7 @@
                     "deprecationMessage": "",
                     "rawdescription": "\n\nOptional click handler\n",
                     "description": "<p>Optional click handler</p>\n",
-                    "line": 49,
+                    "line": 55,
                     "type": "EventEmitter",
                     "inheritance": {
                         "file": "ButtonBase"
@@ -1846,7 +2071,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 16,
+                    "line": 25,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -1858,11 +2083,405 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\r\nimport { ButtonBase } from '../btn-base';\r\n\r\n@Component({\r\n  selector: 'app-sb-table',\r\n  templateUrl: './sb-table.component.html',\r\n  styleUrls: ['./sb-table.component.scss'],\r\n})\r\nexport class SbTableComponent extends ButtonBase {\r\n  @Input()\r\n  maxWidth = '100%';\r\n  constructor() {\r\n    super();\r\n  }\r\n\r\n  ngOnInit(): void {}\r\n}\r\n",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';\r\nimport { ButtonBase } from '../../atoms/btn-base';\r\nimport { PinAuthor } from '../../model/pin-author.model';\r\nimport { PinInfo } from '../../model/pin-info.model';\r\n\r\n@Component({\r\n  selector: 'app-pin-item',\r\n  templateUrl: './pin-item.component.html',\r\n  styleUrls: ['./pin-item.component.scss'],\r\n  changeDetection: ChangeDetectionStrategy.OnPush\r\n})\r\nexport class PinItemComponent extends ButtonBase {\r\n\r\n\r\n  @Input()\r\n  pinInfo: PinInfo | null = null;\r\n\r\n  @Input()\r\n  author: PinAuthor | null = null;\r\n\r\n  constructor() {\r\n    super();\r\n  }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".sb-pin-name {\r\n  display: flex;\r\n  .label {\r\n    font-style: normal;\r\n    font-weight: 700;\r\n    font-size: var(--g-text-font-size-3);\r\n    -webkit-box-orient: vertical;\r\n    display: -webkit-box;\r\n    max-width: 100%;\r\n    overflow: hidden;\r\n    word-break: break-word;\r\n    word-wrap: break-word;\r\n    color: var(--g-colorGray0);\r\n    -webkit-line-clamp: 1;\r\n  }\r\n  mat-icon {\r\n    color: var(--g-colorGray0);\r\n  }\r\n}\r\n",
+                    "data": ".pin-item {\r\n    max-width: 236px;\r\n    // width: 100%;\r\n    display: flex;\r\n    flex: 1 1 100%;\r\n    flex-direction: column;\r\n    img,\r\n    .overlay {\r\n        pointer-events: none;\r\n    }\r\n}\r\n.pin-image-wrapper {\r\n    position: relative;\r\n    border-radius: 16px;\r\n    overflow: hidden;\r\n    min-height: 120px;\r\n\r\n    .overlay {\r\n        position: absolute;\r\n        top: 0;\r\n        bottom: 0;\r\n        left: 0;\r\n        right: 0;\r\n        height: 100%;\r\n        width: 100%;\r\n        opacity: 0;\r\n        transition: 0.5s ease;\r\n        background-color: var(--g-colorGray400);\r\n    }\r\n    .control {\r\n        margin: 12px;\r\n        position: absolute;\r\n        top: 0;\r\n        bottom: 0;\r\n        left: 0;\r\n        right: 0;\r\n        height: 100%;\r\n        width: 100%;\r\n        opacity: 0;\r\n        max-width: calc(236px - 24px);\r\n        max-height: calc(100% - 24px);\r\n        // transition: 0.2s ease;\r\n        display: flex;\r\n        flex-direction: column;\r\n        .table-and-save {\r\n            display: flex;\r\n            align-items: center;\r\n            app-sb-table {\r\n                width: 100%;\r\n            }\r\n        }\r\n        .source-and-share {\r\n            display: flex;\r\n            align-items: center;\r\n            margin-top: auto;\r\n            app-btn-source {\r\n                width: 100%;\r\n                overflow: hidden;\r\n            }\r\n            app-btn-circle-icon {\r\n                margin-left: 10px;\r\n            }\r\n        }\r\n    }\r\n}\r\nfigcaption {\r\n    padding: 8px 6px 16px;\r\n    // height: 66px;\r\n    .caption {\r\n        font-size: var(--g-text-font-size-2);\r\n        -webkit-box-orient: vertical;\r\n        display: -webkit-box;\r\n        max-width: 100%;\r\n        overflow: hidden;\r\n        word-break: break-word;\r\n        font-weight: 700;\r\n        font-family: var(--g-pinFont);\r\n        color: var(--g-colorGray300);\r\n        line-height: 20px;\r\n        margin-bottom: 4px;\r\n    }\r\n    .author {\r\n        display: flex;\r\n        align-items: center;\r\n        .author-name {\r\n            width: calc(100% - 32px);\r\n            a {\r\n                font-size: var(--g-text-font-size-2);\r\n                overflow: hidden;\r\n                text-overflow: ellipsis;\r\n                font-weight: 400;\r\n                margin-left: 9px;\r\n                color: var(--g-colorGray300);\r\n                font-family: var(--g-pinFont);\r\n                display: block;\r\n                white-space: nowrap;\r\n                -webkit-line-clamp: 1;\r\n            }\r\n        }\r\n    }\r\n    .author:hover .author-name {\r\n        text-decoration: underline;\r\n    }\r\n}\r\n.pin-item:hover .overlay {\r\n    opacity: 0.4;\r\n}\r\n\r\n.pin-item:hover .control {\r\n    opacity: 1;\r\n}\r\n\r\n.reactions {\r\n    display: flex;\r\n    align-items: center;\r\n    height: 24px;\r\n    font-size: var(--g-text-font-size-2);\r\n    * {\r\n        margin: 2px;\r\n    }\r\n\r\n    .num-of-react {\r\n        height: 18px;\r\n    }\r\n\r\n    .goodIdea {\r\n        background-image: url(\"^/assets/images/goodIdea.svg\");\r\n        width: 17px;\r\n        height: 17px;\r\n        background-size: contain;\r\n    }\r\n\r\n    .haha {\r\n        background-image: url(\"^/assets/images/haha.svg\");\r\n        width: 17px;\r\n        height: 17px;\r\n        background-size: contain;\r\n    }\r\n\r\n    .love {\r\n        background-image: url(\"^/assets/images/love.svg\");\r\n        width: 17px;\r\n        height: 17px;\r\n        background-size: contain;\r\n    }\r\n\r\n    .wow {\r\n        background-image: url(\"^/assets/images/wow.svg\");\r\n        width: 17px;\r\n        height: 17px;\r\n        background-size: contain;\r\n    }\r\n}\r\n",
+                    "styleUrl": "./pin-item.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 19
+            },
+            "extends": "ButtonBase",
+            "templateData": "<figure class=\"pin-item\" *ngIf=\"pinInfo as pin\">\r\n    <div class=\"pin-image-wrapper\">\r\n        <img src=\"{{pin.imageUrl}}\" alt=\"Truly\" style=\"width:100%\">\r\n        <div class=\"overlay\">\r\n        </div>\r\n        <div class=\"control\">\r\n            <div class=\"table-and-save\">\r\n                <app-sb-table [label]=\"pin.suggestionTable\" [mode]=\"mode == 'save'?'default':'saved'\"></app-sb-table>\r\n                <app-btn-common [size]=\"'large'\" [label]=\"mode == 'save'?'Lưu':'Đã Lưu'\" [mode]=\"mode\">\r\n                </app-btn-common>\r\n            </div>\r\n            <div class=\"source-and-share\">\r\n                <app-btn-source [label]=\"pin.imageSource\"></app-btn-source>\r\n                <app-btn-circle-icon [label]=\"'file_upload'\" [mode]=\"'pin'\" [size]=\"'medium'\"></app-btn-circle-icon>\r\n                <app-btn-circle-icon [label]=\"'more_horiz'\" [mode]=\"'pin'\" [size]=\"'medium'\"></app-btn-circle-icon>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <figcaption>\r\n        <div class=\"caption\" *ngIf=\"pin.caption && pin.caption.length > 0\"\r\n            [ngStyle]=\"{'-webkit-line-clamp': author == null ? 2 : 1}\">{{pin.caption}}</div>\r\n        <div class=\"author\" *ngIf=\"author\">\r\n            <app-img-avatar [imageUrl]=\"author.avatar\"></app-img-avatar>\r\n            <div class=\"author-name\"><a target=\"_blank\" [href]=\"author.link\">{{author.name}}</a></div>\r\n        </div>\r\n        <!-- <div class=\"goodIdea\"></div> -->\r\n        <div class=\"reactions\" *ngIf=\"pin.reactions && pin.reactions.length > 0\">\r\n            <ng-container *ngFor=\"let reaction of pin.reactions\">\r\n                <div [ngClass]=\"reaction\"></div>\r\n            </ng-container>\r\n            <div class=\"num-of-react\" *ngIf=\"pin.reactionNumber\">{{pin.reactionNumber | reaction}}</div>\r\n        </div>\r\n    </figcaption>\r\n</figure>"
+        },
+        {
+            "name": "PinItemDetailComponent",
+            "id": "component-PinItemDetailComponent-193d46fa17f8c6a534129b41cb0817b0",
+            "file": "src/app/shared/molecules/pin-item-detail/pin-item-detail.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-pin-item-detail",
+            "styleUrls": [
+                "./pin-item-detail.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./pin-item-detail.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "author",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "PinAuthor | null"
+                },
+                {
+                    "name": "pinInfo",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "PinInfo | null"
+                },
+                {
+                    "name": "backgroundColor",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "What background color to use",
+                    "description": "<p>What background color to use</p>\n",
+                    "line": 35,
+                    "type": "string",
+                    "inheritance": {
+                        "file": "ButtonBase"
+                    }
+                },
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "Is this the principal call to action on the page?",
+                    "description": "<p>Is this the principal call to action on the page?</p>\n",
+                    "line": 29,
+                    "type": "boolean",
+                    "inheritance": {
+                        "file": "ButtonBase"
+                    }
+                },
+                {
+                    "name": "label",
+                    "defaultValue": "'Button'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "pos": 876,
+                            "end": 890,
+                            "flags": 4227072,
+                            "modifierFlagsCache": 0,
+                            "transformFlags": 0,
+                            "kind": 317,
+                            "tagName": {
+                                "pos": 877,
+                                "end": 885,
+                                "flags": 4227072,
+                                "modifierFlagsCache": 0,
+                                "transformFlags": 0,
+                                "kind": 78,
+                                "escapedText": "required"
+                            },
+                            "comment": ""
+                        }
+                    ],
+                    "rawdescription": "Button contents",
+                    "description": "<p>Button contents</p>\n",
+                    "line": 49,
+                    "type": "string",
+                    "inheritance": {
+                        "file": "ButtonBase"
+                    }
+                },
+                {
+                    "name": "mode",
+                    "defaultValue": "'default'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "Is this the principal call to action on the page?",
+                    "description": "<p>Is this the principal call to action on the page?</p>\n",
+                    "line": 17,
+                    "type": "string",
+                    "inheritance": {
+                        "file": "ButtonBase"
+                    }
+                },
+                {
+                    "name": "primary",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "Is this the principal call to action on the page?",
+                    "description": "<p>Is this the principal call to action on the page?</p>\n",
+                    "line": 11,
+                    "type": "boolean",
+                    "inheritance": {
+                        "file": "ButtonBase"
+                    }
+                },
+                {
+                    "name": "size",
+                    "defaultValue": "'medium'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "How large should the button be?",
+                    "description": "<p>How large should the button be?</p>\n",
+                    "line": 41,
+                    "type": "\"small\" | \"medium\" | \"large\" | \"huge\"",
+                    "inheritance": {
+                        "file": "ButtonBase"
+                    }
+                },
+                {
+                    "name": "toggle",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "Is this the principal call to action on the page?",
+                    "description": "<p>Is this the principal call to action on the page?</p>\n",
+                    "line": 23,
+                    "type": "boolean",
+                    "inheritance": {
+                        "file": "ButtonBase"
+                    }
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onClick",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nOptional click handler\n",
+                    "description": "<p>Optional click handler</p>\n",
+                    "line": 55,
+                    "type": "EventEmitter",
+                    "inheritance": {
+                        "file": "ButtonBase"
+                    }
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 23,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\r\nimport { ButtonBase } from '../../atoms/btn-base';\r\nimport { PinAuthor } from '../../model/pin-author.model';\r\nimport { PinInfo } from '../../model/pin-info.model';\r\n\r\n@Component({\r\n  selector: 'app-pin-item-detail',\r\n  templateUrl: './pin-item-detail.component.html',\r\n  styleUrls: ['./pin-item-detail.component.scss']\r\n})\r\nexport class PinItemDetailComponent extends ButtonBase {\r\n\r\n  @Input()\r\n  pinInfo: PinInfo | null = null;\r\n\r\n  @Input()\r\n  author: PinAuthor | null = null;\r\n\r\n  constructor() {\r\n    super()\r\n  }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".pin-item-detail {\r\n    display: flex;\r\n    flex-direction: column;\r\n    column-count: 2;\r\n}\r\n",
+                    "styleUrl": "./pin-item-detail.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 17
+            },
+            "extends": "ButtonBase",
+            "templateData": "<figure class=\"pin-item-detail\" *ngIf=\"pinInfo as pin\">\r\n    <div class=\"pin-image-wrapper\">\r\n        <img src=\"{{pin.imageUrl}}\" alt=\"Truly\" style=\"width:100%\">\r\n        <div class=\"overlay\">\r\n        </div>\r\n        <div class=\"control\">\r\n            <div class=\"table-and-save\">\r\n                <app-sb-table [label]=\"pin.suggestionTable\" [mode]=\"mode == 'save'?'default':'saved'\"></app-sb-table>\r\n                <app-btn-common [size]=\"'large'\" [label]=\"mode == 'save'?'Lưu':'Đã Lưu'\" [mode]=\"mode\">\r\n                </app-btn-common>\r\n            </div>\r\n            <div class=\"source-and-share\">\r\n                <app-btn-source [label]=\"pin.imageSource\"></app-btn-source>\r\n                <app-btn-circle-icon [label]=\"'file_upload'\" [mode]=\"'pin'\" [size]=\"'medium'\"></app-btn-circle-icon>\r\n                <app-btn-circle-icon [label]=\"'more_horiz'\" [mode]=\"'pin'\" [size]=\"'medium'\"></app-btn-circle-icon>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <figcaption>\r\n        <div class=\"caption\" *ngIf=\"pin.caption && pin.caption.length > 0\"\r\n            [ngStyle]=\"{'-webkit-line-clamp': author == null ? 2 : 1}\">{{pin.caption}}</div>\r\n        <div class=\"author\" *ngIf=\"author\">\r\n            <app-img-avatar [imageUrl]=\"author.avatar\"></app-img-avatar>\r\n            <div class=\"author-name\"><a target=\"_blank\" [href]=\"author.link\">{{author.name}}</a></div>\r\n        </div>\r\n        <!-- <div class=\"goodIdea\"></div> -->\r\n        <div class=\"reactions\" *ngIf=\"pin.reactions && pin.reactions.length > 0\">\r\n            <ng-container *ngFor=\"let reaction of pin.reactions\">\r\n                <div [ngClass]=\"reaction\"></div>\r\n            </ng-container>\r\n            <div class=\"num-of-react\" *ngIf=\"pin.reactionNumber\">{{pin.reactionNumber | reaction}}</div>\r\n        </div>\r\n    </figcaption>\r\n</figure>"
+        },
+        {
+            "name": "SbTableComponent",
+            "id": "component-SbTableComponent-e06335396ea218570d5948343d89d179",
+            "file": "src/app/shared/atoms/sb-table/sb-table.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-sb-table",
+            "styleUrls": [
+                "./sb-table.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./sb-table.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "maxWidth",
+                    "defaultValue": "'100%'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "string"
+                },
+                {
+                    "name": "backgroundColor",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "What background color to use",
+                    "description": "<p>What background color to use</p>\n",
+                    "line": 35,
+                    "type": "string",
+                    "inheritance": {
+                        "file": "ButtonBase"
+                    }
+                },
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "Is this the principal call to action on the page?",
+                    "description": "<p>Is this the principal call to action on the page?</p>\n",
+                    "line": 29,
+                    "type": "boolean",
+                    "inheritance": {
+                        "file": "ButtonBase"
+                    }
+                },
+                {
+                    "name": "label",
+                    "defaultValue": "'Button'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "pos": 876,
+                            "end": 890,
+                            "flags": 4227072,
+                            "modifierFlagsCache": 0,
+                            "transformFlags": 0,
+                            "kind": 317,
+                            "tagName": {
+                                "pos": 877,
+                                "end": 885,
+                                "flags": 4227072,
+                                "modifierFlagsCache": 0,
+                                "transformFlags": 0,
+                                "kind": 78,
+                                "escapedText": "required"
+                            },
+                            "comment": ""
+                        }
+                    ],
+                    "rawdescription": "Button contents",
+                    "description": "<p>Button contents</p>\n",
+                    "line": 49,
+                    "type": "string",
+                    "inheritance": {
+                        "file": "ButtonBase"
+                    }
+                },
+                {
+                    "name": "mode",
+                    "defaultValue": "'default'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "Is this the principal call to action on the page?",
+                    "description": "<p>Is this the principal call to action on the page?</p>\n",
+                    "line": 17,
+                    "type": "string",
+                    "inheritance": {
+                        "file": "ButtonBase"
+                    }
+                },
+                {
+                    "name": "primary",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "Is this the principal call to action on the page?",
+                    "description": "<p>Is this the principal call to action on the page?</p>\n",
+                    "line": 11,
+                    "type": "boolean",
+                    "inheritance": {
+                        "file": "ButtonBase"
+                    }
+                },
+                {
+                    "name": "size",
+                    "defaultValue": "'medium'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "How large should the button be?",
+                    "description": "<p>How large should the button be?</p>\n",
+                    "line": 41,
+                    "type": "\"small\" | \"medium\" | \"large\" | \"huge\"",
+                    "inheritance": {
+                        "file": "ButtonBase"
+                    }
+                },
+                {
+                    "name": "toggle",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "Is this the principal call to action on the page?",
+                    "description": "<p>Is this the principal call to action on the page?</p>\n",
+                    "line": 23,
+                    "type": "boolean",
+                    "inheritance": {
+                        "file": "ButtonBase"
+                    }
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onClick",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nOptional click handler\n",
+                    "description": "<p>Optional click handler</p>\n",
+                    "line": 55,
+                    "type": "EventEmitter",
+                    "inheritance": {
+                        "file": "ButtonBase"
+                    }
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 21,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\r\nimport { ButtonBase } from '../btn-base';\r\n\r\n@Component({\r\n  selector: 'app-sb-table',\r\n  templateUrl: './sb-table.component.html',\r\n  styleUrls: ['./sb-table.component.scss'],\r\n})\r\nexport class SbTableComponent extends ButtonBase {\r\n  @Input()\r\n  maxWidth = '100%';\r\n\r\n  public get classes(): string[] {\r\n    return ['sb-pin-name', `sb-pin-name--${this.mode}`];\r\n  }\r\n\r\n  constructor() {\r\n    super();\r\n  }\r\n\r\n  ngOnInit(): void { }\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".sb-pin-name {\r\n  display: flex;\r\n  cursor: pointer;\r\n\r\n  font-family: var(--g-pinFont);\r\n\r\n  .label {\r\n    font-style: normal;\r\n    font-weight: 700;\r\n    font-size: var(--g-text-font-size-3);\r\n    -webkit-box-orient: vertical;\r\n    display: -webkit-box;\r\n    max-width: 100%;\r\n    overflow: hidden;\r\n    word-break: break-word;\r\n    word-wrap: break-word;\r\n    color: var(--g-colorGray0);\r\n    -webkit-line-clamp: 1;\r\n  }\r\n  mat-icon {\r\n    color: var(--g-colorGray0);\r\n  }\r\n}\r\n\r\n.sb-pin-name--saved {\r\n  .label {\r\n    -webkit-line-clamp: 2;\r\n    line-height: 20px;\r\n  }\r\n  .material-icons-outlined {\r\n    display: none;\r\n  }\r\n}\r\n",
                     "styleUrl": "./sb-table.component.scss"
                 }
             ],
@@ -1873,14 +2492,25 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [],
-                "line": 11
+                "line": 15
             },
             "extends": "ButtonBase",
-            "templateData": "<div\r\n  class=\"sb-pin-name\"\r\n  [ngStyle]=\"{ 'max-width': maxWidth }\"\r\n  (click)=\"onClick.emit($event)\"\r\n>\r\n  <span class=\"label\">{{ label }}</span>\r\n  <div class=\"material-icons-outlined\"><mat-icon>expand_more</mat-icon></div>\r\n</div>\r\n"
+            "accessors": {
+                "classes": {
+                    "name": "classes",
+                    "getSignature": {
+                        "name": "classes",
+                        "type": "[]",
+                        "returnType": "string[]",
+                        "line": 13
+                    }
+                }
+            },
+            "templateData": "<div\r\n  [ngClass]=\"classes\"\r\n  [ngStyle]=\"{ 'max-width': maxWidth }\"\r\n  (click)=\"onClick.emit($event)\"\r\n>\r\n  <span class=\"label\">{{ label }}</span>\r\n  <div class=\"material-icons-outlined\"><mat-icon>expand_more</mat-icon></div>\r\n</div>\r\n"
         },
         {
             "name": "TxbCommonComponent",
-            "id": "component-TxbCommonComponent-074c139fcdd50d9d3270429a0577aba4",
+            "id": "component-TxbCommonComponent-cd955bd02e0a03cf17b98e1a761af59a",
             "file": "src/app/shared/atoms/txb-common/txb-common.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
@@ -1903,7 +2533,7 @@
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 11,
+                    "line": 12,
                     "type": "string"
                 },
                 {
@@ -1911,8 +2541,118 @@
                     "defaultValue": "'100%'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 12,
+                    "line": 13,
                     "type": "string"
+                },
+                {
+                    "name": "backgroundColor",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "What background color to use",
+                    "description": "<p>What background color to use</p>\n",
+                    "line": 35,
+                    "type": "string",
+                    "inheritance": {
+                        "file": "ButtonBase"
+                    }
+                },
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "Is this the principal call to action on the page?",
+                    "description": "<p>Is this the principal call to action on the page?</p>\n",
+                    "line": 29,
+                    "type": "boolean",
+                    "inheritance": {
+                        "file": "ButtonBase"
+                    }
+                },
+                {
+                    "name": "label",
+                    "defaultValue": "'Button'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "pos": 876,
+                            "end": 890,
+                            "flags": 4227072,
+                            "modifierFlagsCache": 0,
+                            "transformFlags": 0,
+                            "kind": 317,
+                            "tagName": {
+                                "pos": 877,
+                                "end": 885,
+                                "flags": 4227072,
+                                "modifierFlagsCache": 0,
+                                "transformFlags": 0,
+                                "kind": 78,
+                                "escapedText": "required"
+                            },
+                            "comment": ""
+                        }
+                    ],
+                    "rawdescription": "Button contents",
+                    "description": "<p>Button contents</p>\n",
+                    "line": 49,
+                    "type": "string",
+                    "inheritance": {
+                        "file": "ButtonBase"
+                    }
+                },
+                {
+                    "name": "mode",
+                    "defaultValue": "'default'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "Is this the principal call to action on the page?",
+                    "description": "<p>Is this the principal call to action on the page?</p>\n",
+                    "line": 17,
+                    "type": "string",
+                    "inheritance": {
+                        "file": "ButtonBase"
+                    }
+                },
+                {
+                    "name": "primary",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "Is this the principal call to action on the page?",
+                    "description": "<p>Is this the principal call to action on the page?</p>\n",
+                    "line": 11,
+                    "type": "boolean",
+                    "inheritance": {
+                        "file": "ButtonBase"
+                    }
+                },
+                {
+                    "name": "size",
+                    "defaultValue": "'medium'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "How large should the button be?",
+                    "description": "<p>How large should the button be?</p>\n",
+                    "line": 41,
+                    "type": "\"small\" | \"medium\" | \"large\" | \"huge\"",
+                    "inheritance": {
+                        "file": "ButtonBase"
+                    }
+                },
+                {
+                    "name": "toggle",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "Is this the principal call to action on the page?",
+                    "description": "<p>Is this the principal call to action on the page?</p>\n",
+                    "line": 23,
+                    "type": "boolean",
+                    "inheritance": {
+                        "file": "ButtonBase"
+                    }
                 }
             ],
             "outputsClass": [
@@ -1921,8 +2661,21 @@
                     "defaultValue": "new EventEmitter<string>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 10,
+                    "line": 11,
                     "type": "EventEmitter<string>"
+                },
+                {
+                    "name": "onClick",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nOptional click handler\n",
+                    "description": "<p>Optional click handler</p>\n",
+                    "line": 55,
+                    "type": "EventEmitter",
+                    "inheritance": {
+                        "file": "ButtonBase"
+                    }
                 }
             ],
             "propertiesClass": [],
@@ -1933,7 +2686,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 15,
+                    "line": 22,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -1945,11 +2698,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-txb-common',\r\n  templateUrl: './txb-common.component.html',\r\n  styleUrls: ['./txb-common.component.scss'],\r\n  changeDetection: ChangeDetectionStrategy.OnPush\r\n})\r\nexport class TxbCommonComponent implements OnInit {\r\n  @Output() contentChange: EventEmitter<string> = new EventEmitter<string>();\r\n  @Input() content: string = '';\r\n  @Input() maxWidth: string = '100%';\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\r\nimport { ButtonBase } from '../btn-base';\r\n\r\n@Component({\r\n  selector: 'app-txb-common',\r\n  templateUrl: './txb-common.component.html',\r\n  styleUrls: ['./txb-common.component.scss'],\r\n  changeDetection: ChangeDetectionStrategy.OnPush\r\n})\r\nexport class TxbCommonComponent extends ButtonBase {\r\n  @Output() contentChange: EventEmitter<string> = new EventEmitter<string>();\r\n  @Input() content: string = '';\r\n  @Input() maxWidth: string = '100%';\r\n  public get classes(): string[] {\r\n    let _class = this.primary ? 'txb-common--primary' : 'txb-common--secondary';\r\n    let _mode = this.mode;\r\n    return ['txb-common', _class, `txb-common--${_mode}`];\r\n  }\r\n  constructor() {\r\n    super();\r\n  }\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".txb-common:focus-within {\r\n    box-shadow: var(--border-blue-active);\r\n    #icon_search.mat-icon {\r\n        display: none;\r\n    }\r\n}\r\n\r\n.txb-common {\r\n    border-radius: 48px;\r\n    height: 48px;\r\n    background-color: var(--g-colorGray100);\r\n    width: 100%;\r\n\r\n    ::ng-deep * {\r\n        background-color: transparent;\r\n    }\r\n    ::ng-deep .mat-form-field-wrapper {\r\n        padding-bottom: 0px;\r\n    }\r\n    ::ng-deep .mat-form-field-flex {\r\n        padding-top: 0px;\r\n        padding-left: 16px;\r\n    }\r\n\r\n    ::ng-deep .mat-form-field-underline {\r\n        display: none;\r\n    }\r\n\r\n    ::ng-deep .mat-form-field-infix {\r\n        display: flex;\r\n        align-items: center;\r\n        padding: 0px;\r\n        border-top: none;\r\n        input {\r\n            color: var(--g-colorGray200);\r\n            font-size: 16px;\r\n            font-weight: normal;\r\n            height: 48px;\r\n        }\r\n    }\r\n    #icon_search.mat-icon {\r\n        color: var(--g-colorGray200);\r\n        font-weight: 600;\r\n        width: 22px;\r\n        height: 22px;\r\n        font-size: 22px;\r\n        margin-right: 5px;\r\n    }\r\n    #icon_cancel.mat-icon {\r\n        color: var(--g-colorGray300);\r\n        // font-weight: 600;\r\n        width: 22px;\r\n        height: 22px;\r\n        font-size: 22px;\r\n        margin-left: 10px;\r\n    }\r\n}\r\n",
+                    "data": ".txb-common:focus-within {\r\n    box-shadow: var(--border-blue-active);\r\n    #icon_search.mat-icon {\r\n        display: none;\r\n    }\r\n}\r\n\r\n.txb-common {\r\n    border-radius: 48px;\r\n    height: 48px;\r\n    width: 100%;\r\n    overflow: hidden;\r\n\r\n    ::ng-deep * {\r\n        background-color: transparent;\r\n    }\r\n    ::ng-deep .mat-form-field-wrapper {\r\n        padding-bottom: 0px;\r\n        height: 100%;\r\n    }\r\n    ::ng-deep .mat-form-field-flex {\r\n        padding-top: 0px;\r\n        padding-left: 16px;\r\n    }\r\n\r\n    ::ng-deep .mat-form-field-underline {\r\n        display: none;\r\n    }\r\n\r\n    ::ng-deep .mat-form-field-infix {\r\n        display: flex;\r\n        align-items: center;\r\n        padding: 0px;\r\n        border-top: none;\r\n        input {\r\n            color: var(--g-colorGray200);\r\n            font-size: var(--g-text-font-size-3);\r\n            font-weight: normal;\r\n            height: 44px;\r\n            padding-top: 4px;\r\n        }\r\n    }\r\n    #icon_search.mat-icon {\r\n        color: var(--g-colorGray200);\r\n        font-weight: 600;\r\n        width: 22px;\r\n        height: 22px;\r\n        font-size: 22px;\r\n        margin-right: 5px;\r\n    }\r\n    #icon_cancel.mat-icon {\r\n        color: var(--g-colorGray300);\r\n        // font-weight: 600;\r\n        width: 22px;\r\n        height: 22px;\r\n        font-size: 22px;\r\n        margin-left: 10px;\r\n        cursor: pointer;\r\n    }\r\n}\r\n\r\n.txb-common--primary {\r\n    background-color: var(--g-colorGray100);\r\n}\r\n\r\n.txb-common--primary:hover {\r\n    background-color: var(--g-colorGray150);\r\n}\r\n\r\n\r\n.txb-common--secondary {\r\n    background-color: var(--g-colorGray0);\r\n}\r\n\r\n.txb-common--input-text {\r\n    border: var(--g-border-width) solid var(--g-colorGray150);\r\n    border-color: var(--g-colorGray150);\r\n    appearance: none;\r\n    border-radius: 16px;\r\n    border-style: solid;\r\n    border-width: 2px;\r\n    height: 48px;\r\n    white-space: nowrap;\r\n    overflow: hidden;\r\n    text-overflow: ellipsis;\r\n    #icon_cancel,\r\n    #icon_search {\r\n        display: none !important;\r\n    }\r\n\r\n    ::ng-deep .mat-form-field-infix {\r\n        input {\r\n            height: 48px;\r\n            padding-top: 0px;\r\n        }\r\n    }\r\n}\r\n",
                     "styleUrl": "./txb-common.component.scss"
                 }
             ],
@@ -1960,12 +2713,21 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [],
-                "line": 12
+                "line": 18
             },
-            "implements": [
-                "OnInit"
-            ],
-            "templateData": "<mat-form-field class=\"txb-common\" appearance=\"fill\" [ngStyle]=\"{'max-width': maxWidth}\">\r\n    <mat-icon class=\"material-icons-outlined\" id=\"icon_search\">search</mat-icon>\r\n    <input ngDefaultControl fieldName=\"field\" matInput type=\"text\" [(ngModel)]=\"content\" (ngModelChange)=\"contentChange.emit($event)\">\r\n    <mat-icon class=\"material-icons\" id=\"icon_cancel\" [ngStyle]=\"{'display': content.length > 0 ? 'unset': 'none'}\">\r\n        cancel</mat-icon>\r\n</mat-form-field>"
+            "extends": "ButtonBase",
+            "accessors": {
+                "classes": {
+                    "name": "classes",
+                    "getSignature": {
+                        "name": "classes",
+                        "type": "[]",
+                        "returnType": "string[]",
+                        "line": 14
+                    }
+                }
+            },
+            "templateData": "<mat-form-field [ngClass]=\"classes\" appearance=\"fill\" [ngStyle]=\"{'max-width': maxWidth}\">\r\n    <mat-icon class=\"material-icons-outlined\" id=\"icon_search\">search</mat-icon>\r\n    <input ngDefaultControl fieldName=\"field\" matInput type=\"text\" [(ngModel)]=\"content\" (ngModelChange)=\"contentChange.emit($event)\">\r\n    <mat-icon class=\"material-icons\" id=\"icon_cancel\" [ngStyle]=\"{'display': content.length > 0 ? 'unset': 'none'}\" (click)=\"contentChange.emit('')\">\r\n        cancel</mat-icon>\r\n</mat-form-field>"
         }
     ],
     "modules": [
@@ -2058,13 +2820,13 @@
         },
         {
             "name": "BtnCircleIconModule",
-            "id": "module-BtnCircleIconModule-335a2b487f49bd31768b4aa4ad2ded53",
+            "id": "module-BtnCircleIconModule-5ceefc6afac21144f15211fb4f2f5382",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/shared/atoms/btn-circle-icon/btn-circle-icon.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { BtnCircleIconComponent } from './btn-circle-icon.component';\r\nimport { MatButtonModule } from '@angular/material/button';\r\nimport { MatIconModule } from '@angular/material/icon';\r\n\r\n@NgModule({\r\n  declarations: [BtnCircleIconComponent],\r\n  imports: [CommonModule, MatIconModule, MatButtonModule],\r\n  exports: [],\r\n})\r\nexport class BtnCircleIconModule {}\r\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { BtnCircleIconComponent } from './btn-circle-icon.component';\r\nimport { MatButtonModule } from '@angular/material/button';\r\nimport { MatIconModule } from '@angular/material/icon';\r\n\r\n@NgModule({\r\n  declarations: [BtnCircleIconComponent],\r\n  imports: [CommonModule, MatIconModule, MatButtonModule],\r\n  exports: [BtnCircleIconComponent],\r\n})\r\nexport class BtnCircleIconModule {}\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -2084,7 +2846,11 @@
                 },
                 {
                     "type": "exports",
-                    "elements": []
+                    "elements": [
+                        {
+                            "name": "BtnCircleIconComponent"
+                        }
+                    ]
                 },
                 {
                     "type": "bootstrap",
@@ -2098,13 +2864,13 @@
         },
         {
             "name": "BtnCommonModule",
-            "id": "module-BtnCommonModule-bb68dd7ff925f57cff7be5b35a8b510d",
+            "id": "module-BtnCommonModule-cff3d5f184ed30a1f8851fdce27c458b",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/shared/atoms/btn-common/btn-common.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { BtnCommonComponent } from './btn-common.component';\r\n\r\n\r\n\r\n@NgModule({\r\n  declarations: [\r\n    BtnCommonComponent\r\n  ],\r\n  imports: [\r\n    CommonModule\r\n  ]\r\n})\r\nexport class BtnCommonModule { }\r\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { BtnCommonComponent } from './btn-common.component';\r\n\r\n\r\n\r\n@NgModule({\r\n  declarations: [\r\n    BtnCommonComponent\r\n  ],\r\n  imports: [\r\n    CommonModule\r\n  ],\r\n  exports: [BtnCommonComponent]\r\n})\r\nexport class BtnCommonModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -2124,7 +2890,11 @@
                 },
                 {
                     "type": "exports",
-                    "elements": []
+                    "elements": [
+                        {
+                            "name": "BtnCommonComponent"
+                        }
+                    ]
                 },
                 {
                     "type": "bootstrap",
@@ -2138,13 +2908,13 @@
         },
         {
             "name": "BtnSourceModule",
-            "id": "module-BtnSourceModule-f65e2c5c9dabe23e77aa2a0c3945c1ad",
+            "id": "module-BtnSourceModule-ff3114a8ef4ec2072af6802cff3aa2b1",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/shared/atoms/btn-source/btn-source.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { BtnSourceComponent } from './btn-source.component';\r\nimport { MatIconModule } from '@angular/material/icon';\r\nimport { MatButtonModule } from '@angular/material/button';\r\n\r\n@NgModule({\r\n  declarations: [BtnSourceComponent],\r\n  imports: [CommonModule, MatIconModule, MatButtonModule],\r\n})\r\nexport class BtnSourceModule {}\r\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { BtnSourceComponent } from './btn-source.component';\r\nimport { MatIconModule } from '@angular/material/icon';\r\nimport { MatButtonModule } from '@angular/material/button';\nimport { LinkPipe } from './link.pipe';\r\n\r\n@NgModule({\r\n  declarations: [BtnSourceComponent, LinkPipe],\r\n  imports: [CommonModule, MatIconModule, MatButtonModule],\r\n  exports: [BtnSourceComponent]\r\n})\r\nexport class BtnSourceModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -2155,6 +2925,9 @@
                     "elements": [
                         {
                             "name": "BtnSourceComponent"
+                        },
+                        {
+                            "name": "LinkPipe"
                         }
                     ]
                 },
@@ -2164,7 +2937,55 @@
                 },
                 {
                     "type": "exports",
+                    "elements": [
+                        {
+                            "name": "BtnSourceComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
                     "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "CommonUtilitiesModule",
+            "id": "module-CommonUtilitiesModule-34272886306ae47ac77e30bdba19c39c",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/shared/common/common.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { ReactionPipe } from './reaction.pipe';\r\n\r\n\r\n\r\n@NgModule({\r\n    declarations: [\r\n        ReactionPipe\r\n    ],\r\n    imports: [\r\n        CommonModule],\r\n    exports: [ReactionPipe]\r\n})\r\nexport class CommonUtilitiesModule { }\r\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "ReactionPipe"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "ReactionPipe"
+                        }
+                    ]
                 },
                 {
                     "type": "bootstrap",
@@ -2298,13 +3119,13 @@
         },
         {
             "name": "HeaderModule",
-            "id": "module-HeaderModule-5c20b9c9aa544c1f85e2d1cadb5d3dee",
+            "id": "module-HeaderModule-42142186212eea50e1f086b647cf0af2",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/shared/molecules/header/header.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { HeaderComponent } from './header.component';\r\n\r\n\r\n\r\n@NgModule({\r\n  declarations: [\r\n    HeaderComponent\r\n  ],\r\n  imports: [\r\n    CommonModule\r\n  ]\r\n})\r\nexport class HeaderModule { }\r\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { HeaderComponent } from './header.component';\r\nimport { BtnCircleIconModule } from '../../atoms/btn-circle-icon/btn-circle-icon.module';\r\nimport { ImgAvatarModule } from '../../atoms/img-avatar/img-avatar.module';\r\nimport { BtnCommonModule } from '../../atoms/btn-common/btn-common.module';\r\nimport { TxbCommonModule } from '../../atoms/txb-common/txb-common.module';\r\n\r\n\r\n\r\n@NgModule({\r\n  declarations: [\r\n    HeaderComponent\r\n  ],\r\n  imports: [\r\n    CommonModule,\r\n    ImgAvatarModule,\r\n    BtnCommonModule,\r\n    BtnCircleIconModule,\r\n    TxbCommonModule\r\n  ]\r\n})\r\nexport class HeaderModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -2320,7 +3141,20 @@
                 },
                 {
                     "type": "imports",
-                    "elements": []
+                    "elements": [
+                        {
+                            "name": "BtnCircleIconModule"
+                        },
+                        {
+                            "name": "BtnCommonModule"
+                        },
+                        {
+                            "name": "ImgAvatarModule"
+                        },
+                        {
+                            "name": "TxbCommonModule"
+                        }
+                    ]
                 },
                 {
                     "type": "exports",
@@ -2338,13 +3172,13 @@
         },
         {
             "name": "ImgAvatarModule",
-            "id": "module-ImgAvatarModule-68bdd895c94d47a9c7e3768cb516482b",
+            "id": "module-ImgAvatarModule-b8c7f4cbe499bc182a28429cf4a56e6e",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/shared/atoms/img-avatar/img-avatar.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { ImgAvatarComponent } from './img-avatar.component';\r\n\r\n\r\n\r\n@NgModule({\r\n  declarations: [\r\n    ImgAvatarComponent\r\n  ],\r\n  imports: [\r\n    CommonModule\r\n  ]\r\n})\r\nexport class ImgAvatarModule { }\r\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { ImgAvatarComponent } from './img-avatar.component';\r\n\r\n\r\n\r\n@NgModule({\r\n  declarations: [\r\n    ImgAvatarComponent\r\n  ],\r\n  imports: [\r\n    CommonModule\r\n  ],\r\n  exports: [ImgAvatarComponent]\r\n})\r\nexport class ImgAvatarModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -2364,7 +3198,11 @@
                 },
                 {
                     "type": "exports",
-                    "elements": []
+                    "elements": [
+                        {
+                            "name": "ImgAvatarComponent"
+                        }
+                    ]
                 },
                 {
                     "type": "bootstrap",
@@ -2422,13 +3260,13 @@
         },
         {
             "name": "PinItemDetailModule",
-            "id": "module-PinItemDetailModule-b1c31cf61bf7cb7279006bac05874ce7",
+            "id": "module-PinItemDetailModule-590dd5c8374bb3851199c1523c896fd2",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/shared/molecules/pin-item-detail/pin-item-detail.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { PinItemDetailComponent } from './pin-item-detail.component';\r\n\r\n\r\n\r\n@NgModule({\r\n  declarations: [\r\n    PinItemDetailComponent\r\n  ],\r\n  imports: [\r\n    CommonModule\r\n  ]\r\n})\r\nexport class PinItemDetailModule { }\r\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { PinItemDetailComponent } from './pin-item-detail.component';\r\nimport { SbTableModule } from '../../atoms/sb-table/sb-table.module';\r\nimport { BtnCommonModule } from '../../atoms/btn-common/btn-common.module';\r\nimport { BtnSourceModule } from '../../atoms/btn-source/btn-source.module';\r\nimport { BtnCircleIconModule } from '../../atoms/btn-circle-icon/btn-circle-icon.module';\r\nimport { TxbCommonModule } from '../../atoms/txb-common/txb-common.module';\r\nimport { MatIconModule } from '@angular/material/icon';\r\nimport { ImgAvatarModule } from '../../atoms/img-avatar/img-avatar.module';\r\nimport { CommonUtilitiesModule } from '../../common/common.module';\r\n\r\n\r\n\r\n@NgModule({\r\n  declarations: [\r\n    PinItemDetailComponent\r\n  ],\r\n  imports: [\r\n    CommonModule,\r\n    CommonUtilitiesModule,\r\n    SbTableModule,\r\n    BtnCommonModule,\r\n    BtnSourceModule,\r\n    BtnCircleIconModule,\r\n    TxbCommonModule,\r\n    MatIconModule,\r\n    ImgAvatarModule\r\n  ]\r\n})\r\nexport class PinItemDetailModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -2444,7 +3282,29 @@
                 },
                 {
                     "type": "imports",
-                    "elements": []
+                    "elements": [
+                        {
+                            "name": "BtnCircleIconModule"
+                        },
+                        {
+                            "name": "BtnCommonModule"
+                        },
+                        {
+                            "name": "BtnSourceModule"
+                        },
+                        {
+                            "name": "CommonUtilitiesModule"
+                        },
+                        {
+                            "name": "ImgAvatarModule"
+                        },
+                        {
+                            "name": "SbTableModule"
+                        },
+                        {
+                            "name": "TxbCommonModule"
+                        }
+                    ]
                 },
                 {
                     "type": "exports",
@@ -2462,13 +3322,13 @@
         },
         {
             "name": "PinItemModule",
-            "id": "module-PinItemModule-ad3d72ce36358048df89bd23877504eb",
+            "id": "module-PinItemModule-4e27ee81b13675927dc84cdd3e934b41",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/shared/molecules/pin-item/pin-item.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { PinItemComponent } from './pin-item.component';\r\n\r\n\r\n\r\n@NgModule({\r\n  declarations: [\r\n    PinItemComponent\r\n  ],\r\n  imports: [\r\n    CommonModule\r\n  ]\r\n})\r\nexport class PinItemModule { }\r\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { PinItemComponent } from './pin-item.component';\r\nimport { TxbCommonModule } from '../../atoms/txb-common/txb-common.module';\r\nimport { SbTableModule } from '../../atoms/sb-table/sb-table.module';\r\nimport { BtnCommonModule } from '../../atoms/btn-common/btn-common.module';\r\nimport { BtnSourceModule } from '../../atoms/btn-source/btn-source.module';\r\nimport { BtnCircleIconModule } from '../../atoms/btn-circle-icon/btn-circle-icon.module';\r\nimport { ImgAvatarModule } from '../../atoms/img-avatar/img-avatar.module';\r\nimport { MatIconModule } from '@angular/material/icon';\r\nimport { CommonUtilitiesModule } from '../../common/common.module';\r\n\r\n\r\n\r\n@NgModule({\r\n  declarations: [\r\n    PinItemComponent\r\n  ],\r\n  imports: [\r\n    CommonModule,\r\n    CommonUtilitiesModule,\r\n    SbTableModule,\r\n    BtnCommonModule,\r\n    BtnSourceModule,\r\n    BtnCircleIconModule,\r\n    TxbCommonModule,\r\n    MatIconModule,\r\n    ImgAvatarModule\r\n  ]\r\n})\r\nexport class PinItemModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -2484,7 +3344,29 @@
                 },
                 {
                     "type": "imports",
-                    "elements": []
+                    "elements": [
+                        {
+                            "name": "BtnCircleIconModule"
+                        },
+                        {
+                            "name": "BtnCommonModule"
+                        },
+                        {
+                            "name": "BtnSourceModule"
+                        },
+                        {
+                            "name": "CommonUtilitiesModule"
+                        },
+                        {
+                            "name": "ImgAvatarModule"
+                        },
+                        {
+                            "name": "SbTableModule"
+                        },
+                        {
+                            "name": "TxbCommonModule"
+                        }
+                    ]
                 },
                 {
                     "type": "exports",
@@ -2502,13 +3384,13 @@
         },
         {
             "name": "SbTableModule",
-            "id": "module-SbTableModule-7d6eb992d5144254e53285288dfffa88",
+            "id": "module-SbTableModule-a820e8ab8367fe2adde96419337d6db9",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/shared/atoms/sb-table/sb-table.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { SbTableComponent } from './sb-table.component';\r\nimport { MatIconModule } from '@angular/material/icon';\r\n\r\n@NgModule({\r\n  declarations: [SbTableComponent],\r\n  imports: [CommonModule, MatIconModule],\r\n})\r\nexport class SbTableModule {}\r\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { SbTableComponent } from './sb-table.component';\r\nimport { MatIconModule } from '@angular/material/icon';\r\n\r\n@NgModule({\r\n  declarations: [SbTableComponent],\r\n  imports: [CommonModule, MatIconModule],\r\n  exports: [SbTableComponent]\r\n})\r\nexport class SbTableModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -2528,7 +3410,11 @@
                 },
                 {
                     "type": "exports",
-                    "elements": []
+                    "elements": [
+                        {
+                            "name": "SbTableComponent"
+                        }
+                    ]
                 },
                 {
                     "type": "bootstrap",
@@ -2601,21 +3487,21 @@
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "object",
-                "defaultValue": "{\r\n  production: false\r\n}"
-            },
-            {
-                "name": "environment",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/environments/environment.prod.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "object",
                 "defaultValue": "{\r\n  production: true\r\n}"
+            },
+            {
+                "name": "environment",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/environments/environment.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\r\n  production: false\r\n}"
             },
             {
                 "name": "Home",
@@ -2632,6 +3518,46 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/app/shared/atoms/btn-common/btn-common.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "InputSearchDetail",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/shared/atoms/txb-common/txb-common.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "InputSearchLong",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/shared/atoms/txb-common/txb-common.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "InputSearchShort",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/shared/atoms/txb-common/txb-common.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "InputTxtDetail",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/shared/atoms/txb-common/txb-common.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -2661,7 +3587,7 @@
                 "name": "LoggedIn",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/Page.stories.ts",
+                "file": "src/stories/Header.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -2671,16 +3597,6 @@
                 "name": "LoggedIn",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/Header.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "LoggedOut",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/stories/Page.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -2692,6 +3608,16 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/Header.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "LoggedOut",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Page.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -2758,6 +3684,126 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "PinItemDefault",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/shared/molecules/pin-item/pin-item.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "PinItemDefault",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/shared/molecules/pin-item-detail/pin-item-detail.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "PinItemNoAuthor",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/shared/molecules/pin-item/pin-item.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "PinItemNoAuthor",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/shared/molecules/pin-item-detail/pin-item-detail.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "PinItemNoCaption",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/shared/molecules/pin-item/pin-item.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "PinItemNoCaption",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/shared/molecules/pin-item-detail/pin-item-detail.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "PinItemSaved",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/shared/molecules/pin-item/pin-item.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "PinItemSaved",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/shared/molecules/pin-item-detail/pin-item-detail.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "PinItemShortImage",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/shared/molecules/pin-item/pin-item.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "PinItemShortImage",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/shared/molecules/pin-item-detail/pin-item-detail.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "PinItemShortImageDefault",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/shared/molecules/pin-item/pin-item.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "PinItemShortImageDefault",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/shared/molecules/pin-item-detail/pin-item-detail.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "PinterestIcon",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -2807,16 +3853,6 @@
                 "defaultValue": "Template.bind({})"
             },
             {
-                "name": "SbTableLong",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/shared/atoms/txb-common/txb-common.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
                 "name": "SbTableShort",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -2827,20 +3863,20 @@
                 "defaultValue": "Template.bind({})"
             },
             {
-                "name": "SbTableShort",
+                "name": "Secondary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/shared/atoms/txb-common/txb-common.stories.ts",
+                "file": "src/stories/Button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
             {
-                "name": "Secondary",
+                "name": "SettingButton",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/Button.stories.ts",
+                "file": "src/app/shared/atoms/btn-common/btn-common.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -2900,21 +3936,21 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/Page.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<Page>",
-                "defaultValue": "(args: Page) => ({\r\n  props: args,\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/stories/Header.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<Header>",
                 "defaultValue": "(args: Header) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Page.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<Page>",
+                "defaultValue": "(args: Page) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -2930,21 +3966,31 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/shared/atoms/btn-common/btn-common.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<BtnCommonComponent>",
-                "defaultValue": "(args: BtnCommonComponent) => ({\r\n  props: args,\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/app/shared/atoms/btn-source/btn-source.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<BtnSourceComponent>",
                 "defaultValue": "(args: BtnSourceComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/shared/atoms/lb-pin-name/lb-pin-name.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<LbPinNameComponent>",
+                "defaultValue": "(args: LbPinNameComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/shared/atoms/btn-common/btn-common.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<BtnCommonComponent>",
+                "defaultValue": "(args: BtnCommonComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -2980,17 +4026,47 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/shared/atoms/lb-pin-name/lb-pin-name.stories.ts",
+                "file": "src/app/shared/molecules/header/header.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<LbPinNameComponent>",
-                "defaultValue": "(args: LbPinNameComponent) => ({\r\n  props: args,\r\n})"
+                "type": "Story<HeaderComponent>",
+                "defaultValue": "(args: HeaderComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/shared/molecules/pin-item/pin-item.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<PinItemComponent>",
+                "defaultValue": "(args: PinItemComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/shared/molecules/pin-item-detail/pin-item-detail.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<PinItemDetailComponent>",
+                "defaultValue": "(args: PinItemDetailComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "UserAvatar",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/app/shared/atoms/img-avatar/img-avatar.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "UserAvatar",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/shared/molecules/header/header.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -3042,18 +4118,6 @@
                     "type": "literal type"
                 }
             ],
-            "src/environments/environment.ts": [
-                {
-                    "name": "environment",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/environments/environment.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "object",
-                    "defaultValue": "{\r\n  production: false\r\n}"
-                }
-            ],
             "src/environments/environment.prod.ts": [
                 {
                     "name": "environment",
@@ -3064,6 +4128,18 @@
                     "deprecationMessage": "",
                     "type": "object",
                     "defaultValue": "{\r\n  production: true\r\n}"
+                }
+            ],
+            "src/environments/environment.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\r\n  production: false\r\n}"
                 }
             ],
             "src/app/shared/atoms/btn-common/btn-common.stories.ts": [
@@ -3098,6 +4174,16 @@
                     "defaultValue": "Template.bind({})"
                 },
                 {
+                    "name": "SettingButton",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/atoms/btn-common/btn-common.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
@@ -3106,6 +4192,58 @@
                     "deprecationMessage": "",
                     "type": "Story<BtnCommonComponent>",
                     "defaultValue": "(args: BtnCommonComponent) => ({\r\n  props: args,\r\n})"
+                }
+            ],
+            "src/app/shared/atoms/txb-common/txb-common.stories.ts": [
+                {
+                    "name": "InputSearchDetail",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/atoms/txb-common/txb-common.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "InputSearchLong",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/atoms/txb-common/txb-common.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "InputSearchShort",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/atoms/txb-common/txb-common.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "InputTxtDetail",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/atoms/txb-common/txb-common.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/atoms/txb-common/txb-common.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<TxbCommonComponent>",
+                    "defaultValue": "(args: TxbCommonComponent) => ({\r\n  props: args,\r\n})"
                 }
             ],
             "src/stories/Button.stories.ts": [
@@ -3182,38 +4320,6 @@
                     "defaultValue": "(args: LbPinNameComponent) => ({\r\n  props: args,\r\n})"
                 }
             ],
-            "src/stories/Page.stories.ts": [
-                {
-                    "name": "LoggedIn",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/Page.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "LoggedOut",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/Page.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/Page.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<Page>",
-                    "defaultValue": "(args: Page) => ({\r\n  props: args,\r\n})"
-                }
-            ],
             "src/stories/Header.stories.ts": [
                 {
                     "name": "LoggedIn",
@@ -3244,6 +4350,38 @@
                     "deprecationMessage": "",
                     "type": "Story<Header>",
                     "defaultValue": "(args: Header) => ({\r\n  props: args,\r\n})"
+                }
+            ],
+            "src/stories/Page.stories.ts": [
+                {
+                    "name": "LoggedIn",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Page.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "LoggedOut",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Page.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Page.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<Page>",
+                    "defaultValue": "(args: Page) => ({\r\n  props: args,\r\n})"
                 }
             ],
             "src/app/shared/atoms/btn-circle-icon/btn-circle-icon.stories.ts": [
@@ -3390,6 +4528,150 @@
                     "defaultValue": "Template.bind({})"
                 }
             ],
+            "src/app/shared/molecules/pin-item/pin-item.stories.ts": [
+                {
+                    "name": "PinItemDefault",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/molecules/pin-item/pin-item.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "PinItemNoAuthor",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/molecules/pin-item/pin-item.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "PinItemNoCaption",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/molecules/pin-item/pin-item.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "PinItemSaved",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/molecules/pin-item/pin-item.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "PinItemShortImage",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/molecules/pin-item/pin-item.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "PinItemShortImageDefault",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/molecules/pin-item/pin-item.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/molecules/pin-item/pin-item.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<PinItemComponent>",
+                    "defaultValue": "(args: PinItemComponent) => ({\r\n  props: args,\r\n})"
+                }
+            ],
+            "src/app/shared/molecules/pin-item-detail/pin-item-detail.stories.ts": [
+                {
+                    "name": "PinItemDefault",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/molecules/pin-item-detail/pin-item-detail.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "PinItemNoAuthor",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/molecules/pin-item-detail/pin-item-detail.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "PinItemNoCaption",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/molecules/pin-item-detail/pin-item-detail.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "PinItemSaved",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/molecules/pin-item-detail/pin-item-detail.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "PinItemShortImage",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/molecules/pin-item-detail/pin-item-detail.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "PinItemShortImageDefault",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/molecules/pin-item-detail/pin-item-detail.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/molecules/pin-item-detail/pin-item-detail.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<PinItemDetailComponent>",
+                    "defaultValue": "(args: PinItemDetailComponent) => ({\r\n  props: args,\r\n})"
+                }
+            ],
             "src/app/shared/atoms/sb-table/sb-table.stories.ts": [
                 {
                     "name": "SbTableLong",
@@ -3422,38 +4704,6 @@
                     "defaultValue": "(args: SbTableComponent) => ({\r\n  props: args,\r\n})"
                 }
             ],
-            "src/app/shared/atoms/txb-common/txb-common.stories.ts": [
-                {
-                    "name": "SbTableLong",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/shared/atoms/txb-common/txb-common.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "SbTableShort",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/shared/atoms/txb-common/txb-common.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/shared/atoms/txb-common/txb-common.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<TxbCommonComponent>",
-                    "defaultValue": "(args: TxbCommonComponent) => ({\r\n  props: args,\r\n})"
-                }
-            ],
             "src/app/shared/atoms/btn-source/btn-source.stories.ts": [
                 {
                     "name": "Share",
@@ -3474,6 +4724,28 @@
                     "deprecationMessage": "",
                     "type": "Story<BtnSourceComponent>",
                     "defaultValue": "(args: BtnSourceComponent) => ({\r\n  props: args,\r\n})"
+                }
+            ],
+            "src/app/shared/molecules/header/header.stories.ts": [
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/molecules/header/header.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<HeaderComponent>",
+                    "defaultValue": "(args: HeaderComponent) => ({\r\n  props: args,\r\n})"
+                },
+                {
+                    "name": "UserAvatar",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/molecules/header/header.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
                 }
             ]
         },
@@ -3513,8 +4785,8 @@
                 "type": "component",
                 "linktype": "component",
                 "name": "ButtonBase",
-                "coveragePercent": 87,
-                "coverageCount": "7/8",
+                "coveragePercent": 88,
+                "coverageCount": "8/9",
                 "status": "very-good"
             },
             {
@@ -3522,8 +4794,8 @@
                 "type": "component",
                 "linktype": "component",
                 "name": "BtnCircleIconComponent",
-                "coveragePercent": 77,
-                "coverageCount": "7/9",
+                "coveragePercent": 80,
+                "coverageCount": "8/10",
                 "status": "very-good"
             },
             {
@@ -3611,8 +4883,8 @@
                 "type": "component",
                 "linktype": "component",
                 "name": "BtnCommonComponent",
-                "coveragePercent": 77,
-                "coverageCount": "7/9",
+                "coveragePercent": 80,
+                "coverageCount": "8/10",
                 "status": "very-good"
             },
             {
@@ -3650,6 +4922,16 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
+                "name": "SettingButton",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/atoms/btn-common/btn-common.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
                 "name": "Template",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
@@ -3660,8 +4942,8 @@
                 "type": "component",
                 "linktype": "component",
                 "name": "BtnSourceComponent",
-                "coveragePercent": 70,
-                "coverageCount": "7/10",
+                "coveragePercent": 72,
+                "coverageCount": "8/11",
                 "status": "good"
             },
             {
@@ -3685,12 +4967,21 @@
                 "status": "low"
             },
             {
+                "filePath": "src/app/shared/atoms/btn-source/link.pipe.ts",
+                "type": "pipe",
+                "linktype": "pipe",
+                "name": "LinkPipe",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "src/app/shared/atoms/img-avatar/img-avatar.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "ImgAvatarComponent",
-                "coveragePercent": 70,
-                "coverageCount": "7/10",
+                "coveragePercent": 72,
+                "coverageCount": "8/11",
                 "status": "good"
             },
             {
@@ -3758,8 +5049,8 @@
                 "type": "component",
                 "linktype": "component",
                 "name": "LbPinNameComponent",
-                "coveragePercent": 70,
-                "coverageCount": "7/10",
+                "coveragePercent": 72,
+                "coverageCount": "8/11",
                 "status": "good"
             },
             {
@@ -3787,8 +5078,8 @@
                 "type": "component",
                 "linktype": "component",
                 "name": "SbTableComponent",
-                "coveragePercent": 63,
-                "coverageCount": "7/11",
+                "coveragePercent": 66,
+                "coverageCount": "8/12",
                 "status": "good"
             },
             {
@@ -3826,16 +5117,16 @@
                 "type": "component",
                 "linktype": "component",
                 "name": "TxbCommonComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/6",
-                "status": "low"
+                "coveragePercent": 57,
+                "coverageCount": "8/14",
+                "status": "good"
             },
             {
                 "filePath": "src/app/shared/atoms/txb-common/txb-common.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "SbTableLong",
+                "name": "InputSearchDetail",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -3845,7 +5136,27 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "SbTableShort",
+                "name": "InputSearchLong",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/atoms/txb-common/txb-common.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "InputSearchShort",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/atoms/txb-common/txb-common.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "InputTxtDetail",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -3858,6 +5169,33 @@
                 "name": "Template",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/common/reaction.pipe.ts",
+                "type": "pipe",
+                "linktype": "pipe",
+                "name": "ReactionPipe",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/model/pin-author.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "PinAuthor",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/model/pin-info.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "PinInfo",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
                 "status": "low"
             },
             {
@@ -3893,7 +5231,27 @@
                 "linktype": "component",
                 "name": "HeaderComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/3",
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/molecules/header/header.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/molecules/header/header.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "UserAvatar",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
@@ -3901,8 +5259,78 @@
                 "type": "component",
                 "linktype": "component",
                 "name": "PinItemDetailComponent",
+                "coveragePercent": 61,
+                "coverageCount": "8/13",
+                "status": "good"
+            },
+            {
+                "filePath": "src/app/shared/molecules/pin-item-detail/pin-item-detail.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "PinItemDefault",
                 "coveragePercent": 0,
-                "coverageCount": "0/3",
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/molecules/pin-item-detail/pin-item-detail.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "PinItemNoAuthor",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/molecules/pin-item-detail/pin-item-detail.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "PinItemNoCaption",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/molecules/pin-item-detail/pin-item-detail.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "PinItemSaved",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/molecules/pin-item-detail/pin-item-detail.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "PinItemShortImage",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/molecules/pin-item-detail/pin-item-detail.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "PinItemShortImageDefault",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/molecules/pin-item-detail/pin-item-detail.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
@@ -3910,8 +5338,78 @@
                 "type": "component",
                 "linktype": "component",
                 "name": "PinItemComponent",
+                "coveragePercent": 61,
+                "coverageCount": "8/13",
+                "status": "good"
+            },
+            {
+                "filePath": "src/app/shared/molecules/pin-item/pin-item.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "PinItemDefault",
                 "coveragePercent": 0,
-                "coverageCount": "0/3",
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/molecules/pin-item/pin-item.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "PinItemNoAuthor",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/molecules/pin-item/pin-item.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "PinItemNoCaption",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/molecules/pin-item/pin-item.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "PinItemSaved",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/molecules/pin-item/pin-item.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "PinItemShortImage",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/molecules/pin-item/pin-item.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "PinItemShortImageDefault",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/molecules/pin-item/pin-item.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {

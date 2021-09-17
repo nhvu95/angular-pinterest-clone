@@ -13,7 +13,7 @@ import { ButtonBase } from '../btn-base';
 })
 export class ImgAvatarComponent extends ButtonBase {
   @Input()
-  imgSource: string = '';
+  imageUrl: string = '';
 
   public get classes(): string[] {
     return ['img-avatar', `img-avatar--${this.size}`];

@@ -9,9 +9,14 @@ import { ButtonBase } from '../btn-base';
 export class SbTableComponent extends ButtonBase {
   @Input()
   maxWidth = '100%';
+
+  public get classes(): string[] {
+    return ['sb-table-name', `sb-table-name--${this.mode}`, `sb-table-name--${this.primary}`];
+  }
+
   constructor() {
     super();
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 }

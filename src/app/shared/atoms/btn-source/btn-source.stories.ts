@@ -4,6 +4,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { moduleMetadata, storiesOf } from '@storybook/angular';
 import { Story, Meta } from '@storybook/angular/types-6-0';
 import { BtnSourceComponent } from './btn-source.component';
+import { LinkPipe } from '../../common/link.pipe';
+import { CommonUtilitiesModule } from '../../common/common.module';
 
 export default {
   title: 'Atoms/BtnSource',
@@ -14,7 +16,7 @@ export default {
   decorators: [
     moduleMetadata({
       declarations: [],
-      imports: [MatIconModule, MatButtonModule],
+      imports: [MatIconModule, CommonUtilitiesModule, MatButtonModule],
     }),
   ],
 } as Meta;

@@ -43,7 +43,6 @@ Home.args = {
   size: 'large',
   label: 'Trang chủ',
   mode: 'home',
-  backgroundColor: 'var(--g-colorGray300)'
 };
 
 export const HomeInDetail = Template.bind({});
@@ -58,8 +57,7 @@ export const Save = Template.bind({});
 Save.args = {
   size: 'large',
   label: 'Lưu',
-  mode: 'save',
-  backgroundColor: 'var(--g-colorRed100)'
+  mode: 'save'
 }
 
 export const SettingButton = Template.bind({});
@@ -67,5 +65,4 @@ SettingButton.args = {
   size: 'large',
   label: 'Thay đổi',
   mode: 'setting',
-  backgroundColor: 'var(--g-colorGray100)'
 }

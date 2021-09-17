@@ -5,20 +5,23 @@
   color: var(--g-colorGray300);
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   box-shadow: none;
-  padding: 0px 13px;
+  padding: 0px 7px;
+  width: 100%;
 
   ::ng-deep .mat-button-wrapper {
     padding: 0px;
     display: flex;
     align-items: center;
+    width: 100%;
+    height: 32px;
 
     .mat-icon {
       transform: rotate(135deg);
       height: 20px !important;
       width: 20px !important;
-      margin-right: 7px;
+      margin-right: 3px;
     }
     .material-icons-outlined {
       font-size: 20px;
@@ -27,14 +30,12 @@
     .content {
       font-size: var(--g-text-font-size-2);
       text-align: left;
-      -webkit-line-clamp: 1;
       font-weight: 700;
-      word-wrap: break-word;
-      -webkit-box-orient: vertical;
-      display: -webkit-box;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      display: block;
       max-width: 100%;
       overflow: hidden;
-      word-break: break-word;
     }
   }
 }
@@ -45,5 +46,5 @@
 
 .btn-source:active {
   box-shadow: none !important;
-//   transform: scale(0.93, 0.93);
+  //   transform: scale(0.93, 0.93);
 }

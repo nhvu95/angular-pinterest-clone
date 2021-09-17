@@ -34,6 +34,10 @@
   min-width: 60px;
 }
 
+.btn-common--save{
+  background-color: var(--g-colorRed100);
+}
+
 .btn-common--save:hover {
   background-color: #ad081b !important;
   background-color: var(--g-colorRed100Hovered) !important;
@@ -43,8 +47,19 @@
   transform: scale(0.93,0.93);
 }
 
+.btn-common--saved {
+  background-color: #111 !important;
+  background-color: var(--g-colorGray300) !important;
+}
+
+.btn-common--home{
+  background-color: #111 !important;
+  background-color: var(--g-colorGray300) !important;
+}
+
 .btn-common--home-detail{
     color: var(--g-colorGray300);
+    background-color: unset;
 }
 
 .btn-common--home-detail:hover {

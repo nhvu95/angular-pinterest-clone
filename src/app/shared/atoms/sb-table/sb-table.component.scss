@@ -1,5 +1,9 @@
-.sb-pin-name {
+.sb-table-name {
   display: flex;
+  cursor: pointer;
+
+  font-family: var(--g-pinFont);
+
   .label {
     font-style: normal;
     font-weight: 700;
@@ -15,5 +19,24 @@
   }
   mat-icon {
     color: var(--g-colorGray0);
+  }
+}
+
+.sb-table-name--true {
+  mat-icon {
+    color: var(--g-colorGray300);
+  }
+  .label {
+    color: var(--g-colorGray300);
+  } 
+}
+
+.sb-table-name--saved {
+  .label {
+    -webkit-line-clamp: 2;
+    line-height: 20px;
+  }
+  .material-icons-outlined {
+    display: none;
   }
 }

@@ -1,10 +1,10 @@
 <nav class="header-component">
     <app-img-avatar [size]="'small'" [primary]="true"></app-img-avatar>
-    <app-btn-common [size]="'large'" [label]="'Trang chủ'" [mode]="'home'" [backgroundColor]="'var(--g-colorGray300)'">
+    <app-btn-common [size]="'large'" [label]="'Trang chủ'" [mode]="'home'">
     </app-btn-common>
     <app-txb-common [(content)]="searchContent" [maxWidth]="'100%'" [primary]="true"></app-txb-common>
     <app-btn-circle-icon [label]="'notifications'" [primary]="true" [mode]="'header'" [size]="'large'">
     </app-btn-circle-icon>
     <app-btn-circle-icon [label]="'sms'" [primary]="true" [mode]="'header'" [size]="'large'"></app-btn-circle-icon>
-    <app-img-avatar [size]="'small'" [imgSource]="user.avatar"></app-img-avatar>
+    <app-img-avatar [size]="'small'" [imageUrl]="user.avatar"></app-img-avatar>
 </nav>

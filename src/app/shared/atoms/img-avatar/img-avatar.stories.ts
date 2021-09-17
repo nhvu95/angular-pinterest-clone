@@ -24,28 +24,28 @@ const Template: Story<ImgAvatarComponent> = (args: ImgAvatarComponent) => ({
 export const UserAvatar = Template.bind({});
 UserAvatar.args = {
   size: 'small',
-  imgSource:
+  imageUrl:
     'https://i.pinimg.com/75x75_RS/73/03/c6/7303c6ea1ff1a2be0e40de7607eb8286.jpg',
 };
 
 export const PinAvatar = Template.bind({});
 PinAvatar.args = {
   size: 'medium',
-  imgSource:
+  imageUrl:
     'https://i.pinimg.com/75x75_RS/73/03/c6/7303c6ea1ff1a2be0e40de7607eb8286.jpg',
 };
 
 export const PinDetail_UserAvatar = Template.bind({});
 PinDetail_UserAvatar.args = {
   size: 'large',
-  imgSource:
+  imageUrl:
     'https://i.pinimg.com/75x75_RS/73/03/c6/7303c6ea1ff1a2be0e40de7607eb8286.jpg',
 };
 
 export const UserDetailAvatar = Template.bind({});
 UserDetailAvatar.args = {
   size: 'huge',
-  imgSource:
+  imageUrl:
     'https://i.pinimg.com/280x280_RS/73/03/c6/7303c6ea1ff1a2be0e40de7607eb8286.jpg',
 };
 

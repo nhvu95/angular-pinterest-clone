@@ -1,1 +1,34 @@
-<p>pin-item works!</p>
+<figure class="pin-item" *ngIf="pinInfo as pin">
+    <div class="pin-image-wrapper">
+        <img src="{{pin.imageUrl}}" alt="Truly" style="width:100%">
+        <div class="overlay">
+        </div>
+        <div class="control">
+            <div class="table-and-save">
+                <app-sb-table [label]="pin.suggestionTable" [mode]="mode == 'save'?'default':'saved'"></app-sb-table>
+                <app-btn-common [size]="'large'" [label]="mode == 'save'?'Lưu':'Đã Lưu'" [mode]="mode">
+                </app-btn-common>
+            </div>
+            <div class="source-and-share">
+                <app-btn-source [label]="pin.imageSource"></app-btn-source>
+                <app-btn-circle-icon [label]="'file_upload'" [mode]="'pin'" [size]="'medium'"></app-btn-circle-icon>
+                <app-btn-circle-icon [label]="'more_horiz'" [mode]="'pin'" [size]="'medium'"></app-btn-circle-icon>
+            </div>
+        </div>
+    </div>
+    <figcaption>
+        <div class="caption" *ngIf="pin.caption && pin.caption.length > 0"
+            [ngStyle]="{'-webkit-line-clamp': author == null ? 2 : 1}">{{pin.caption}}</div>
+        <div class="author" *ngIf="author">
+            <app-img-avatar [imageUrl]="author.avatar"></app-img-avatar>
+            <div class="author-name"><a target="_blank" [href]="author.link">{{author.name}}</a></div>
+        </div>
+        <!-- <div class="goodIdea"></div> -->
+        <div class="reactions" *ngIf="pin.reactions && pin.reactions.length > 0">
+            <ng-container *ngFor="let reaction of pin.reactions">
+                <div [ngClass]="reaction"></div>
+            </ng-container>
+            <div class="num-of-react" *ngIf="pin.reactionNumber">{{pin.reactionNumber | reaction}}</div>
+        </div>
+    </figcaption>
+</figure>

@@ -6,5 +6,6 @@ import { MatIconModule } from '@angular/material/icon';
 @NgModule({
   declarations: [SbTableComponent],
   imports: [CommonModule, MatIconModule],
+  exports: [SbTableComponent]
 })
-export class SbTableModule {}
+export class SbTableModule { }

@@ -1,5 +1,5 @@
 <div
-  class="sb-pin-name"
+  [ngClass]="classes"
   [ngStyle]="{ 'max-width': maxWidth }"
   (click)="onClick.emit($event)"
 >

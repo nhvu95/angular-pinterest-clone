@@ -1,1 +1,31 @@
-<p>pin-item-detail works!</p>
+<mat-card>
+    <mat-card-content *ngIf="pinInfo as pin">
+        <figure>
+            <div>
+                <img src="{{pin.imageUrl}}" alt="Truly" style="width:100%">
+                <div class="overlay"> </div>
+            </div>
+        </figure>
+        <figcaption>
+            <div class="top-control-wrapper">
+                <div class="top-control">
+                    <app-btn-circle-icon [label]="'more_horiz'" [mode]="'pin'" [size]="'large'"></app-btn-circle-icon>
+                    <app-btn-circle-icon [label]="'file_upload'" [mode]="'pin'" [size]="'large'"></app-btn-circle-icon>
+                    <app-sb-table [label]="pin.suggestionTable" [mode]="mode == 'save'?'default':'saved'"
+                        [primary]="true">
+                    </app-sb-table>
+                    <app-btn-common [size]="'large'" [label]="mode == 'save'?'Lưu':'Đã Lưu'" [mode]="mode">
+                    </app-btn-common>
+                </div>
+            </div>
+            <a class="source">
+                {{pin.imageSource | link}}
+            </a>
+            <a class="name">
+                <h1>
+                    {{pin.caption}}
+                </h1>
+            </a>
+        </figcaption>
+    </mat-card-content>
+</mat-card>
