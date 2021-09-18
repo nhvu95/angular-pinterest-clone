@@ -2,7 +2,7 @@
     <mat-card-content *ngIf="pinInfo as pin">
         <figure>
             <div>
-                <img src="{{pin.imageUrl}}" alt="Truly" style="width:100%">
+                <img src="{{pin.imageUrl}}" alt="Truly" class="w-full">
                 <div class="overlay"> </div>
             </div>
         </figure>
@@ -26,11 +26,27 @@
                     {{pin.imageTitle}}
                 </h1>
             </a>
-            <div class="description">
+            <div class="description" *ngIf="pin.imageDescription">
                 <span>
                     {{pin.imageDescription}}
                 </span>
-                <div>Khác</div>
+                <div class="text-sm font-bold cursor-pointer">Khác</div>
+            </div>
+            <div class="w-full flex items-center mt-4" *ngIf="author">
+                <div class="flex items-center">
+                    <app-img-avatar [imageUrl]="author.avatar" [size]="'large'" class="mr-2.5"></app-img-avatar>
+                    <div class="flex flex-col">
+                        <span class="break-words font-bold text-sm">{{author.name}}</span>
+                        <span class="break-words text-sm" *ngIf="author.numOfFollower">{{author.numOfFollower |
+                            reaction}} người theo dõi</span>
+                    </div>
+                </div>
+                <div class="ml-auto">
+                    <app-btn-common [size]="'large'" [label]="'Theo dõi'" [mode]="'setting'"></app-btn-common>
+                </div>
+            </div>
+            <div class="min-h-48 flex flex-col w-full">
+                <app-tab-comment [label]="suggestLabel" [comments]="comments" [images]="images"></app-tab-comment>
             </div>
         </figcaption>
     </mat-card-content>

@@ -1,4 +1,5 @@
 // also exported from '@storybook/angular' if you can deal with breaking changes in 6.1
+import { TextFieldModule } from '@angular/cdk/text-field';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
@@ -26,6 +27,7 @@ export default {
         MatIconModule,
         FormsModule,
         MatInputModule,
+        TextFieldModule,
         BrowserAnimationsModule
       ],
     }),
@@ -63,4 +65,12 @@ InputTxtDetail.args = {
   maxWidth: '300px',
   primary: false,
   mode:'input-text'
+};
+
+export const AreaDetail = Template.bind({});
+AreaDetail.args = {
+  content: 'Gundam Exp',
+  maxWidth: '300px',
+  primary: false,
+  mode:'textarea'
 };

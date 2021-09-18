@@ -10,7 +10,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { ImgAvatarModule } from '../../atoms/img-avatar/img-avatar.module';
 import { CommonUtilitiesModule } from '../../common/common.module';
 import { MatCardModule } from '@angular/material/card';
-
+import { TabCommentModule } from '../tab-comment/tab-comment.module';
 
 @NgModule({
   declarations: [
@@ -26,7 +26,8 @@ import { MatCardModule } from '@angular/material/card';
     TxbCommonModule,
     MatIconModule,
     MatCardModule,
-    ImgAvatarModule
+    ImgAvatarModule,
+    TabCommentModule
   ]
 })
 export class PinItemDetailModule { }

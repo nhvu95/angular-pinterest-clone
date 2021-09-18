@@ -1,0 +1,23 @@
+#tab-comment {
+    ::ng-deep .mat-tab-label {
+        min-width: fit-content;
+        padding: 0px;
+        height: 36px;
+        .mat-tab-label-content{
+            font-size: var(--g-text-font-size-3);
+            word-wrap: break-word;
+            font-weight: 700;
+            color: var(--g-colorGray300);
+        }
+    }
+    ::ng-deep .mat-tab-label:last-child {
+        margin-left: 20px;
+    }
+
+    ::ng-deep .mat-ink-bar{
+        background-color: var(--g-colorGray300) !important;
+    }
+    ::ng-deep .mat-tab-nav-bar, ::ng-deep.mat-tab-header {
+        border-bottom: hidden;
+    }
+}

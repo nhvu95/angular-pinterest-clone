@@ -1,0 +1,33 @@
+<mat-tab-group mat-align-tabs="start" dynamicHeight id="tab-comment" animationDuration="0ms">
+    <mat-tab label="2 ảnh">
+        <div class="mt-8">
+            <carousel [height]="105" [cellWidth]="105" [margin]="2" class="rounded-4 overflow-hidden">
+                <div class="carousel-cell" *ngFor="let image of images">
+                    <img src="{{image}}">
+                </div>
+            </carousel>
+        </div>
+        <div class="flex items-center my-12">
+            <div style="white-space: pre-line">
+                {{label}}
+            </div>
+            <app-btn-common class="ml-auto" [size]="'large'" [label]="'Thêm ảnh'" [mode]="'setting'"></app-btn-common>
+        </div>
+    </mat-tab>
+    <mat-tab label="3 nhận xét">
+        <ng-container *ngFor="let com of comments">
+            <div class="mb-4 flex mt-8">
+                <app-img-avatar [imageUrl]="com.avatar" [size]="'large'" class="mr-5"></app-img-avatar>
+                <div class="border border-gray-300 border-solid rounded-4 p-3 w-full">
+                    <div class="flex">
+                        <div class="text-xs font-semibold leading-4 mr-2 pt-px"> {{com.userId}} </div>
+                        <div class="text-sm text-gray-400 leading-4" *ngIf="com.date">{{com.date | timecomment}}</div>
+                    </div>
+                    <div style="white-space: pre-line" class="text-xs">
+                        {{com.comment}}
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+    </mat-tab>
+</mat-tab-group>

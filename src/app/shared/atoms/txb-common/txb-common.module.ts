@@ -4,6 +4,7 @@ import { TxbCommonComponent } from './txb-common.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
+import { TextFieldModule } from '@angular/cdk/text-field';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     FormsModule,
     MatInputModule,
-    MatIconModule
+    MatIconModule,
+    TextFieldModule
   ],
   exports: [TxbCommonComponent]
 })

@@ -12,6 +12,7 @@ import { PinItemDetailComponent } from './pin-item-detail.component';
 import { ReactionPipe } from '../../common/reaction.pipe';
 import { MatCardModule } from '@angular/material/card';
 import { CommonUtilitiesModule } from '../../common/common.module';
+import { TabCommentModule } from '../tab-comment/tab-comment.module';
 
 export default {
   title: 'Molecules/PinItemDetail',
@@ -31,6 +32,7 @@ export default {
         SbTableModule,
         BtnSourceModule,
         MatCardModule,
+        TabCommentModule,
         BrowserAnimationsModule
       ],
     }),
@@ -54,6 +56,7 @@ PinItemDefault.args = {
     avatar: 'https://i.pinimg.com/75x75_RS/73/03/c6/7303c6ea1ff1a2be0e40de7607eb8286.jpg',
     link: 'https://i.pinimg.com/75x75_RS/73/03/c6/7303c6ea1ff1a2be0e40de7607eb8286.jpg',
     name: 'Hieu Nguyen Vu',
+    numOfFollower: 100000
   },
   mode: 'save',
 };
@@ -70,6 +73,7 @@ PinItemSaved.args = {
     avatar: 'https://i.pinimg.com/75x75_RS/73/03/c6/7303c6ea1ff1a2be0e40de7607eb8286.jpg',
     link: 'https://i.pinimg.com/75x75_RS/73/03/c6/7303c6ea1ff1a2be0e40de7607eb8286.jpg',
     name: 'Hieu Nguyen Vu',
+    numOfFollower: 100000
   },
   mode: 'home',
 };
@@ -99,6 +103,8 @@ PinItemNoCaption.args = {
     avatar: 'https://i.pinimg.com/75x75_RS/73/03/c6/7303c6ea1ff1a2be0e40de7607eb8286.jpg',
     link: 'https://i.pinimg.com/75x75_RS/73/03/c6/7303c6ea1ff1a2be0e40de7607eb8286.jpg',
     name: 'Hieu Nguyen Vu Hieu Nguyen Vu Hieu Nguyen Vu',
+    numOfFollower: 100000
+
   },
   mode: 'home',
 };
@@ -117,6 +123,7 @@ PinItemShortImageDefault.args = {
     avatar: 'https://i.pinimg.com/75x75_RS/73/03/c6/7303c6ea1ff1a2be0e40de7607eb8286.jpg',
     link: 'https://i.pinimg.com/75x75_RS/73/03/c6/7303c6ea1ff1a2be0e40de7607eb8286.jpg',
     name: 'Hieu Nguyen Vu Hieu Nguyen Vu Hieu Nguyen Vu',
+    numOfFollower: 100000
   },
   mode: 'save',
 };
@@ -135,7 +142,8 @@ PinItemShortImage.args = {
   author: {
     avatar: 'https://i.pinimg.com/75x75_RS/73/03/c6/7303c6ea1ff1a2be0e40de7607eb8286.jpg',
     link: 'https://i.pinimg.com/75x75_RS/73/03/c6/7303c6ea1ff1a2be0e40de7607eb8286.jpg',
-    name: 'Hieu Nguyen Vu Hieu Nguyen Vu Hieu Nguyen Vu'
+    name: 'Hieu Nguyen Vu Hieu Nguyen Vu Hieu Nguyen Vu',
+    numOfFollower: 100000
   },
   mode: 'home',
 };

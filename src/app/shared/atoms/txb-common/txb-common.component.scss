@@ -67,22 +67,24 @@
     background-color: var(--g-colorGray150);
 }
 
-
 .txb-common--secondary {
     background-color: var(--g-colorGray0);
 }
-
-.txb-common--input-text {
+.txt-share-mode {
     border: var(--g-border-width) solid var(--g-colorGray150);
     border-color: var(--g-colorGray150);
     appearance: none;
-    border-radius: 16px;
     border-style: solid;
     border-width: 2px;
-    height: 48px;
     white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    // overflow: hidden;
+    // text-overflow: ellipsis;
+}
+
+.txb-common--input-text {
+    height: 48px;
+    border-radius: 16px;
+    @apply txt-share-mode;
     #icon_cancel,
     #icon_search {
         display: none !important;
@@ -94,4 +96,39 @@
             padding-top: 0px;
         }
     }
+}
+.txb-common--textarea {
+    @apply txt-share-mode;
+    height: auto;
+    min-height: 48px;
+    border-radius: 3rem;
+
+    font-size: var(--g-text-font-size-2);
+    color: var(--g-colorGray300);
+
+    #icon_cancel,
+    #icon_search {
+        display: none !important;
+    }
+
+    ::ng-deep .mat-form-field-infix {
+        textarea {
+            min-height: 48px;
+        }
+    }
+}
+.txb-common--textarea:active,
+.txb-common--textarea:focus-within {
+    border-radius: 16px;
+}
+
+.txb-common--textarea[disabled="true"] {
+    border-radius: 16px !important;
+    textarea:disabled {
+        font-size: var(--g-text-font-size-1);
+        color: var(--g-colorGray300);
+    }
+}
+textarea::-webkit-scrollbar {
+    display: none;
 }

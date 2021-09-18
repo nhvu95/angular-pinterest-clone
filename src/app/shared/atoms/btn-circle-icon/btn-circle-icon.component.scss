@@ -1,20 +1,23 @@
 .btn-circle-icon {
-  border-radius: 3rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: none;
+  // border-radius: 3rem;
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
+  // box-shadow: none;
+  @apply rounded-12 flex items-center justify-center shadow-none;
 }
 
 .btn-circle-icon--medium {
-  height: 32px;
-  max-width: 32px;
+  // height: 32px;
+  // max-width: 32px;
+  @apply h-8 max-w-8;
 }
 
 .btn-circle-icon--large {
-  height: 48px;
-  width: 48px;
-  max-width: 48px;
+  // height: 48px;
+  // width: 48px;
+  // max-width: 48px;
+  @apply h-12 w-12 max-w-12;
 }
 
 .btn-circle-icon--pin {
@@ -42,8 +45,9 @@
 .btn-circle-icon--pin.btn-circle-icon--large {
   background-color: transparent;
   .mat-icon {
-    height: 28px;
-    width: 28px;
+    // height: 28px;
+    // width: 28px;
+    @apply w-7 h-7;
   }
   .material-icons {
     font-size: 28px;
@@ -70,8 +74,9 @@
   ::ng-deep .mat-button-wrapper {
     padding: 0px;
     .mat-icon {
-      height: 28px;
-      width: 28px;
+      // height: 28px;
+      // width: 28px;
+      @apply w-7 h-7;
     }
     .material-icons {
       font-size: 28px;
@@ -100,8 +105,9 @@
   ::ng-deep .mat-button-wrapper {
     padding: 0px;
     .mat-icon {
-      height: 20px;
-      width: 20px;
+      // height: 20px;
+      // width: 20px;
+      @apply h-5 w-5;
     }
     .material-icons {
       font-size: 20px;
